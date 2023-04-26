@@ -20,12 +20,12 @@ export async function GET(
   const $ = cheerio.load(data);
 
   //events timeline
-  const timeline = $(".timeline ul"); 
+  const timeline = $(".timeline ul");
 
   //check if the match events are available
   if (timeline.children().length) {
     const matchEvents: MatchEvent[] = [];
-    
+
     timeline.children().each(function () {
       if (!$(this).hasClass("titleTL")) {
         matchEvents.push({
