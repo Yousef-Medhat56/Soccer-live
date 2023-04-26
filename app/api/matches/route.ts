@@ -1,7 +1,6 @@
 import * as cheerio from "cheerio";
 import { Match, LeagueMatches } from "@/types/match";
 export async function GET(req: Request) {
-  
   //get "date" value from query string
   const date = new URL(req.url as string).searchParams.get("date");
 
@@ -79,7 +78,5 @@ export async function GET(req: Request) {
     });
   });
 
-
   return new Response(JSON.stringify({ data: { allMatches } }));
-
 }
