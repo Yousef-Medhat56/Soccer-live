@@ -1,4 +1,5 @@
 import { PlayerInLineup, TeamLineup } from "@/types/lineup";
+import * as cheerio from "cheerio";
 
 //players positions by number of formation lines
 const positionsByFormLines = {
@@ -65,4 +66,28 @@ export const createTeamFormation = (
   });
 
   return team;
+};
+
+export const getSubsitutes = async (matchId: string, isHomeTeam: boolean) => {
+  const url = `https://www.btolat.com/matches/lineup/${matchId}`;
+  const response = await fetch(url);
+  const data = await response.text();
+
+  //load data to cheerio
+  const $ = cheerio.load(data);
+
+  const teamClass = isHomeTeam ? ".teamHome" : ".teamAway";
+
+  const substitutesArr: PlayerInLineup[] = [];
+  const substitutesHTML = $(`${teamClass} .playersAdditional .player`);
+
+  substitutesHTML.each(function () {
+    const newPlayer: PlayerInLineup = {
+      name: $(this).find(".playerName").text(),
+      shirtNumber: +$(this).find(".playerNumber").text(),
+    };
+    substitutesArr.push(newPlayer);
+  });
+  
+  return substitutesArr;
 };
