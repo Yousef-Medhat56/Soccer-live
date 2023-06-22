@@ -68,3 +68,64 @@ Return list of all the matches of a specific day (default: today).
     }
 }
 ```
+### GET: /matches/{match_id}
+Redirects to `/matches/{match_id}/stats` endpoint.
+
+### GET: /matches/{match_id}/stats
+Return statistics of the match.</br>
+
+Available statistics:
+1. Possession
+2. Total shots
+3. Shots on target
+4. Saves
+5. Yellow cards
+6. Red cards
+7. Offsides
+8. Fouls
+#### Example Request
+`GET /api/matches/3325351/stats`
+#### Example Response
+```
+{
+    "data": {
+        "matchId": "3325351",
+        "possession": {
+            "home": 56,
+            "away": 44
+        },
+        "goals": {
+            "home": 1,
+            "away": 0
+        },
+        "yellowCards": {
+            "home": 2,
+            "away": 3
+        },
+        "redCards": {
+            "home": 0,
+            "away": 0
+        },
+        "shots": {
+            "home": 7,
+            "away": 14
+        },
+        "targetShots": {
+            "home": 4,
+            "away": 6
+        },
+        "offside": {
+            "home": 1,
+            "away": 1
+        },
+        "saves": {
+            "home": 5,
+            "away": 3
+        },
+        "fouls": {
+            "home": 11,
+            "away": 17
+        }
+    }
+}
+```
