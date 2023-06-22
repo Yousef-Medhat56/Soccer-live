@@ -129,3 +129,112 @@ Available statistics:
     }
 }
 ```
+### GET: /matches/{match_id}/events
+Return events of the match.</br>
+
+Available events:
+1. Goal
+2. Yellow card
+3. Red card
+4. Substitution
+5. Missed penalty
+#### Example Request
+`GET /api/matches/3325351/events`
+#### Example Response
+```
+{
+    "data": [
+        {
+            "atHomeTeam": true,
+            "eventTime": "36",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "فيل فودين",
+            "substituteName": "كيفين دي بروين"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "57",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "روميلو لوكاكو",
+            "substituteName": "إيدين دجيكو"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "59",
+            "eventImg": "https://static.btolat.com/images/yellowcard.png",
+            "playerName": "نيكولو باريلا"
+        },
+        {
+            "atHomeTeam": true,
+            "eventTime": "68",
+            "eventImg": "https://static.btolat.com/images/goal.png",
+            "playerName": "رودريجو هيرنانديز"
+        },
+        {
+            "atHomeTeam": true,
+            "eventTime": "75",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "كايل ووكر",
+            "substituteName": "مانويل أكانجي"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "77",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "راؤول بيلانوفا",
+            "substituteName": "دينزل دومفريس"
+        },
+        {
+            "atHomeTeam": true,
+            "eventTime": "83",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "كايل ووكر",
+            "substituteName": "جون ستونز"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "83",
+            "eventImg": "https://static.btolat.com/images/yellowcard.png",
+            "playerName": "روميلو لوكاكو"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "84",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "هنريخ مخيتاريان",
+            "substituteName": "هاكان تشالهاناوجلو"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "84",
+            "eventImg": "https://static.btolat.com/images/subst.png",
+            "playerName": "دانيلو دامروزيو",
+            "substituteName": "ماتيو دارميان"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "90+2",
+            "eventImg": "https://static.btolat.com/images/yellowcard.png",
+            "playerName": "أندريه أونانا"
+        },
+        {
+            "atHomeTeam": true,
+            "eventTime": "90+2",
+            "eventImg": "https://static.btolat.com/images/yellowcard.png",
+            "playerName": "إيرلينج هالاند"
+        },
+        {
+            "atHomeTeam": true,
+            "eventTime": "90+4",
+            "eventImg": "https://static.btolat.com/images/yellowcard.png",
+            "playerName": "ايديرسون"
+        },
+        {
+            "atHomeTeam": false,
+            "eventTime": "90+6",
+            "eventImg": "https://static.btolat.com/images/yellowcard.png",
+            "playerName": "S. Inzaghi"
+        }
+    ]
+}
+```
