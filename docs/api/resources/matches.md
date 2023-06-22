@@ -238,3 +238,254 @@ Available events:
     ]
 }
 ```
+### GET: /matches/{match_id}/lineups
+Return lineups of the match.</br>
+
+Available datas:
+1. Formation
+2. Start XI and their positions
+3. Substitutes
+#### Example Request
+`GET /api/matches/3325351/lineups`
+#### Example Response
+```
+{
+    "home": {
+        "formation": "3-2-4-1",
+        "mainPlayers": {
+            "GK": {
+                "name": "ايديرسون",
+                "shirtNumber": "31",
+                "positionNumber": "1"
+            },
+            "D": [
+                {
+                    "name": "مانويل أكانجي",
+                    "shirtNumber": "25",
+                    "positionNumber": "2"
+                },
+                {
+                    "name": "روبن دياز",
+                    "shirtNumber": "3",
+                    "positionNumber": "3"
+                },
+                {
+                    "name": "ناثان أكي",
+                    "shirtNumber": "6",
+                    "positionNumber": "4"
+                }
+            ],
+            "DM": [
+                {
+                    "name": "جون ستونز",
+                    "shirtNumber": "5",
+                    "positionNumber": "5"
+                },
+                {
+                    "name": "رودريجو هيرنانديز",
+                    "shirtNumber": "16",
+                    "positionNumber": "6"
+                }
+            ],
+            "M": [],
+            "AM": [
+                {
+                    "name": "برناردو سيلفا",
+                    "shirtNumber": "20",
+                    "positionNumber": "7"
+                },
+                {
+                    "name": "كيفين دي بروين",
+                    "shirtNumber": "17",
+                    "positionNumber": "8"
+                },
+                {
+                    "name": "إلكاي جوندوجان",
+                    "shirtNumber": "8",
+                    "positionNumber": "9"
+                },
+                {
+                    "name": "جاك جريليش",
+                    "shirtNumber": "10",
+                    "positionNumber": "10"
+                }
+            ],
+            "F": [
+                {
+                    "name": "إيرلينج هالاند",
+                    "shirtNumber": "9",
+                    "positionNumber": "11"
+                }
+            ]
+        },
+        "substitutes": [
+            {
+                "name": " سيرجيو جوميز",
+                "shirtNumber": 21
+            },
+            {
+                "name": " فيل فودين",
+                "shirtNumber": 47
+            },
+            {
+                "name": " إيميرك لابورتي",
+                "shirtNumber": 14
+            },
+            {
+                "name": " رياض محرز",
+                "shirtNumber": 26
+            },
+            {
+                "name": " ريكو لويس",
+                "shirtNumber": 82
+            },
+            {
+                "name": " كايل ووكر",
+                "shirtNumber": 2
+            },
+            {
+                "name": " كالفين فيليبس",
+                "shirtNumber": 4
+            },
+            {
+                "name": " M. Perrone",
+                "shirtNumber": 32
+            },
+            {
+                "name": " سكوت كارسون",
+                "shirtNumber": 33
+            },
+            {
+                "name": " كول بالمر",
+                "shirtNumber": 80
+            },
+            {
+                "name": " ستيفان اورتيجا",
+                "shirtNumber": 18
+            },
+            {
+                "name": " جوليان ألفاريز",
+                "shirtNumber": 19
+            }
+        ]
+    },
+    "away": {
+        "formation": "3-5-2",
+        "mainPlayers": {
+            "GK": {
+                "name": "أندريه أونانا",
+                "shirtNumber": "24",
+                "positionNumber": "1"
+            },
+            "D": [
+                {
+                    "name": "ماتيو دارميان",
+                    "shirtNumber": "36",
+                    "positionNumber": "2"
+                },
+                {
+                    "name": "فرانشيسكو أتشيربي",
+                    "shirtNumber": "15",
+                    "positionNumber": "3"
+                },
+                {
+                    "name": "أليساندرو باستوني",
+                    "shirtNumber": "95",
+                    "positionNumber": "4"
+                }
+            ],
+            "DM": [],
+            "M": [
+                {
+                    "name": "دينزل دومفريس",
+                    "shirtNumber": "2",
+                    "positionNumber": "5"
+                },
+                {
+                    "name": "نيكولو باريلا",
+                    "shirtNumber": "23",
+                    "positionNumber": "6"
+                },
+                {
+                    "name": "مارسيلو بروزوفيتش",
+                    "shirtNumber": "77",
+                    "positionNumber": "7"
+                },
+                {
+                    "name": "هاكان تشالهاناوجلو",
+                    "shirtNumber": "20",
+                    "positionNumber": "8"
+                },
+                {
+                    "name": "فيديريكو ديماركو",
+                    "shirtNumber": "32",
+                    "positionNumber": "9"
+                }
+            ],
+            "AM": [],
+            "F": [
+                {
+                    "name": "إيدين دجيكو",
+                    "shirtNumber": "9",
+                    "positionNumber": "10"
+                },
+                {
+                    "name": "لاوتارو مارتينيز",
+                    "shirtNumber": "10",
+                    "positionNumber": "11"
+                }
+            ]
+        },
+        "substitutes": [
+            {
+                "name": " راؤول بيلانوفا",
+                "shirtNumber": 12
+            },
+            {
+                "name": " روبيرتو جاليارديني",
+                "shirtNumber": 5
+            },
+            {
+                "name": " سمير هاندنوفيتش",
+                "shirtNumber": 1
+            },
+            {
+                "name": " K. Asllani",
+                "shirtNumber": 14
+            },
+            {
+                "name": " إيه. كورداز",
+                "shirtNumber": 21
+            },
+            {
+                "name": " هنريخ مخيتاريان",
+                "shirtNumber": 22
+            },
+            {
+                "name": " ستيفان دي فري",
+                "shirtNumber": 6
+            },
+            {
+                "name": " خواكين كوريا",
+                "shirtNumber": 11
+            },
+            {
+                "name": " روبن جوسينس",
+                "shirtNumber": 8
+            },
+            {
+                "name": " روميلو لوكاكو",
+                "shirtNumber": 90
+            },
+            {
+                "name": " دانيلو دامروزيو",
+                "shirtNumber": 33
+            },
+            {
+                "name": " ميلان سكرينيار",
+                "shirtNumber": 37
+            }
+        ]
+    }
+}
+```
