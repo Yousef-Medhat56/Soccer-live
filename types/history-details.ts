@@ -6,7 +6,7 @@ type TeamInMatch = {
 };
 
 type Match = {
-  date: string;
+  date: Date;
   league: string;
   homeTeam: TeamInMatch;
   awayTeam: TeamInMatch;
