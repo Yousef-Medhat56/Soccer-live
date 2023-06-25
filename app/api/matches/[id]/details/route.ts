@@ -58,6 +58,7 @@ export async function GET(
       //F2F results array
       f2fResultsArr = getOldMatchesArr($, f2fResultsDiv);
 
+      //  Get face 2 face big wins
       $(".tabTitle").each(function () {
         //find big wins section in the page
         if ($(this).find("span").text() == "أكبر فوز") {
@@ -68,8 +69,31 @@ export async function GET(
       });
     }
 
+    const sectionsLength = $(".card").length;
+
+    //home last matches
+    const homeLastMatchesDiv = $(".card").eq(sectionsLength - 2);
+    const homeLastMatchesArr = getOldMatchesArr($, homeLastMatchesDiv);
+
+    //away last matches
+    const awayLastMatchesDiv = $(".card").eq(sectionsLength - 1);
+    const awayLastMatchesArr = getOldMatchesArr($, awayLastMatchesDiv);
+
+    // create MatchHistoryDetails object
+    const matchHistoryDetails: MatchHistoryDetails = {
+      f2fHistory,
+      f2fResults: f2fResultsArr,
+      f2fBigWins: bigWinsArr,
+      homeLastMatches: homeLastMatchesArr,
+      awayLastMatches: awayLastMatchesArr,
+    };
+
     return new Response(
-      JSON.stringify({ data: { f2fHistory, f2fResultsArr, bigWinsArr } })
+      JSON.stringify({
+        data: {
+          ...matchHistoryDetails,
+        },
+      })
     );
   } else {
     return new Response(
