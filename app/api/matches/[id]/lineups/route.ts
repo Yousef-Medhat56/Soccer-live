@@ -15,7 +15,7 @@ export async function GET(
   const data = await response.json();
 
   //check if the response is successful
-  if (response.status==200) {
+  if (response.status == 200 && data.localteam.lstlinup.length > 0) {
     //home team formation
     const homeTeam = createTeamFormation(
       data.localteam.formation,
