@@ -88,6 +88,6 @@ export const getSubsitutes = async (matchId: string, isHomeTeam: boolean) => {
     };
     substitutesArr.push(newPlayer);
   });
-  
+
   return substitutesArr;
 };
