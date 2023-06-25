@@ -49,14 +49,27 @@ export async function GET(
     // F2F Results
     let f2fResultsArr: Match[] = [];
 
+    //Big wins
+    let bigWinsArr: Match[] = [];
+
     //check if the 2 teams have faced each other before
     if (totalF2F > 0) {
       const f2fResultsDiv = $(".card").eq(1);
+      //F2F results array
       f2fResultsArr = getOldMatchesArr($, f2fResultsDiv);
+
+      $(".tabTitle").each(function () {
+        //find big wins section in the page
+        if ($(this).find("span").text() == "أكبر فوز") {
+          const bigWinsDiv = $(this).parent().find(".card");
+          // big wins array
+          bigWinsArr = getOldMatchesArr($, bigWinsDiv);
+        }
+      });
     }
 
     return new Response(
-      JSON.stringify({ data: { f2fHistory, f2fResultsArr } })
+      JSON.stringify({ data: { f2fHistory, f2fResultsArr, bigWinsArr } })
     );
   } else {
     return new Response(
