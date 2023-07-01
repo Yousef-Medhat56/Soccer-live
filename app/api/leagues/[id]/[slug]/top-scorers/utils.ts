@@ -41,3 +41,14 @@ export const getTopScorers = ($: cheerio.CheerioAPI): TopScorer[] => {
   });
   return topScorersArr;
 };
+
+//sort top scorers by their goals number
+export const sortTopScorers = (a: TopScorer, b: TopScorer) => {
+  if (a.goalsNum > b.goalsNum) {
+    return -1;
+  }
+  if (a.goalsNum < b.goalsNum) {
+    return 1;
+  }
+  return 0;
+};
