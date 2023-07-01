@@ -3,7 +3,7 @@ import {
   Match,
   MatchHistoryDetails,
   TeamInMatch,
-} from "@/types/history-details";
+} from "@/types/matches/history-details";
 import * as cheerio from "cheerio";
 import { getOldMatchesArr } from "./utils";
 

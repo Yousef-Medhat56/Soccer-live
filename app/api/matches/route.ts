@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { Match, LeagueMatches } from "@/types/match";
+import { Match, LeagueMatches } from "@/types/matches/match";
 export async function GET(req: Request) {
   //get "date" value from query string
   const date = new URL(req.url as string).searchParams.get("date");

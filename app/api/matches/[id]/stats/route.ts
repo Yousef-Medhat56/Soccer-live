@@ -1,4 +1,4 @@
-import { MatchStats } from "@/types/stats";
+import { MatchStats } from "@/types/matches/stats";
 import * as cheerio from "cheerio";
 
 export async function GET(
