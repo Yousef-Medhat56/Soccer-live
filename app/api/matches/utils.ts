@@ -33,7 +33,7 @@ export const getMatches = (
 
       //create match object
       const match: Match = {
-        matchId: $(this).attr("id")!,
+        matchId: $(this).find("a.stat").attr("href")!.split("/")[3],
         matchStatus: matchStatus!,
         matchTime: $(this).find(".matchDate span").text() || undefined,
         homeName: homeTeamElm.find(".teamName").text(),
