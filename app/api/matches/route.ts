@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
-import { Match, LeagueMatches } from "@/types/matches/match";
+import { LeagueMatches } from "@/types/matches/match";
+import { getMatches } from "./utils";
 export async function GET(req: Request) {
   //get "date" value from query string
   const date = new URL(req.url as string).searchParams.get("date");
@@ -23,52 +24,14 @@ export async function GET(req: Request) {
 
   const allMatches: LeagueMatches[] = [];
 
+  //loop through leagues
   $(".matchtableX").each(function () {
     const leagueId = $(this).attr("data-leg-name")!;
     const leagueName = $(this).find(".col h2").text()!;
     const leagueImg = $(this).find(".col-2 img").attr("src");
 
-    const matchesInLeague: Match[] = [];
-    $(this)
-      .find("ul")
-      .children()
-      .each(function () {
-        //Match status
-        let matchStatus: string;
-        switch ($(this).find(".status").text()) {
-          case "لم تبدأ":
-            matchStatus = "not started";
-            break;
-          case "مباشر":
-            matchStatus = "live";
-            break;
-          case "انتهت":
-            matchStatus = "finished";
-        }
-
-        // Home team
-        const homeTeamElm = $(this).find(".team1");
-
-        //Away team
-        const awayTeamElm = $(this).find(".team2");
-
-        //create match object
-        const match: Match = {
-          matchId: $(this).attr("id")!,
-          matchStatus: matchStatus!,
-          matchTime: $(this).find(".matchDate span").text() || undefined,
-          homeName: homeTeamElm.find(".teamName").text(),
-          homeImg: homeTeamElm.find("img").attr("src"),
-          homeUrl: homeTeamElm.attr("href"),
-          homeScore: $(this).find(".team1G").text() || undefined,
-          awayName: awayTeamElm.find(".teamName").text(),
-          awayImg: awayTeamElm.find("img").attr("src"),
-          awayUrl: awayTeamElm.attr("href"),
-          awayScore: $(this).find(".team2G").text() || undefined,
-        };
-
-        matchesInLeague.push(match);
-      });
+    //get all matches in the league
+    const matchesInLeague = getMatches($, $(this).find("ul"));
 
     allMatches.push({
       leagueId,
