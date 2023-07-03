@@ -38,12 +38,12 @@ export const getOldMatchesArr = (
     };
 
     const match: Match = {
-      id:"",
-      status:"finished",
+      id: "",
+      status: "finished",
       league,
       time: matchDate,
-      home:homeTeam,
-      away:awayTeam,
+      home: homeTeam,
+      away: awayTeam,
     };
     oldMatchesArr.push(match);
   });

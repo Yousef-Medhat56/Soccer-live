@@ -8,7 +8,7 @@ export type TeamInMatch = {
 export type Match = {
   id: string;
   status: string;
-  league?:String;
+  league?: String;
   time?: string;
   home: TeamInMatch;
   away: TeamInMatch;
