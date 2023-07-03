@@ -28,5 +28,5 @@ export type MatchHistoryDetails = {
   f2fBigWins?: Match[]; //face to face big wins
   homeLastMatches?: Match[];
   awayLastMatches?: Match[];
-  standings?:GroupStandings[]
+  standings?: GroupStandings[];
 };

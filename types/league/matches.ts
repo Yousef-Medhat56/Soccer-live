@@ -2,10 +2,10 @@ import { Match } from "../matches/match";
 
 export type MatchesInDay = {
   date: String;
-  matches:Match[]
+  matches: Match[];
 };
 
 export type Round = {
-  name:String;
-  queryStr:String;
-}
+  name: String;
+  queryStr: String;
+};

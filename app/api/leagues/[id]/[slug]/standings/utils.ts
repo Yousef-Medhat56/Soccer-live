@@ -5,9 +5,8 @@ export const getStandings = (
   $: cheerio.CheerioAPI,
   element: cheerio.Cheerio<cheerio.Element>
 ): GroupStandings[] => {
-  
   const leagueStandings: GroupStandings[] = [];
-  
+
   element.each(function () {
     const groupTitle = $(this).find(".groupTitle").text();
     const teamStandings: TeamInStandings[] = [];

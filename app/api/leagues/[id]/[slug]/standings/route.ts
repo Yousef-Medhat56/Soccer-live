@@ -21,7 +21,7 @@ export async function GET(
 
   //check if the league table exists
   if ($(".leagueTable").length) {
-    const leagueStandings = getStandings($,$(".leagueTable"));
+    const leagueStandings = getStandings($, $(".leagueTable"));
     return new Response(JSON.stringify({ data: { groups: leagueStandings } }));
   } else {
     return new Response(

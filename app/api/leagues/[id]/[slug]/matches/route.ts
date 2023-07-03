@@ -26,15 +26,15 @@ export async function GET(
 
   //load data to cheerio
   let $ = cheerio.load(data);
-  
+
   //if the round value is invalid, refetch the page without the round query string
   if (round && !$(".matchtableX").length && $("select").length) {
     url = `https://www.btolat.com/league/fixtures/${id}/${slug}`;
     response = await fetch(url);
     data = await response.text();
-    $ = cheerio.load(data)
+    $ = cheerio.load(data);
   }
-  
+
   //check if the fixtures table exists
   if ($(".matchtableX").length) {
     //rounds array

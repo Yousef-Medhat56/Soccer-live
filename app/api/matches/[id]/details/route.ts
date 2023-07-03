@@ -77,7 +77,7 @@ export async function GET(
     if ($(".leagueTable").length) {
       standings = getStandings($, $(".leagueTable"));
     }
-    
+
     const sectionsLength = $(".card").length;
 
     //home last matches

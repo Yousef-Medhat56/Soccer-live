@@ -16,8 +16,6 @@ export type TeamInStandings = {
 };
 
 export type GroupStandings = {
-  groupName?:String,
-  standings:TeamInStandings[]
-}
-
-
+  groupName?: String;
+  standings: TeamInStandings[];
+};

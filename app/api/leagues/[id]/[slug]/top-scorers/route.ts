@@ -23,7 +23,7 @@ export async function GET(
   if ($(".topScores").length) {
     //top scorers array
     const topScorersArr = getTopScorers($);
-    topScorersArr.sort(sortTopScorers) //sort top scorers by their goals
+    topScorersArr.sort(sortTopScorers); //sort top scorers by their goals
     return new Response(
       JSON.stringify({ data: { topScorers: topScorersArr } })
     );

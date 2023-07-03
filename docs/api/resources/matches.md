@@ -1,15 +1,25 @@
 # Matches
+
 Get information about the matches of a specific day.
+
 ## Endpoints
+
 ### GET: /matches
+
 Return list of all the matches of a specific day (default: today).
+
 #### Parameters
-| Parameter | Type   | Required | Description                           |
-|-----------|--------|----------|---------------------------------------|
-|    date   | string |   false  | The day's date<br>format: [YYYY-MM-DD] |
+
+| Parameter | Type   | Required | Description                            |
+| --------- | ------ | -------- | -------------------------------------- |
+| date      | string | false    | The day's date<br>format: [YYYY-MM-DD] |
+
 #### Example Request
+
 `GET /api/matches?date=2023/06/10`
+
 #### Example Response
+
 ```
 {
     "data": {
@@ -68,13 +78,17 @@ Return list of all the matches of a specific day (default: today).
     }
 }
 ```
+
 ### GET: /matches/{match_id}
+
 Redirects to `/matches/{match_id}/stats` endpoint.
 
 ### GET: /matches/{match_id}/stats
+
 Return statistics of the match.</br>
 
 Available statistics:
+
 1. Possession
 2. Total shots
 3. Shots on target
@@ -83,9 +97,13 @@ Available statistics:
 6. Red cards
 7. Offsides
 8. Fouls
+
 #### Example Request
+
 `GET /api/matches/3325351/stats`
+
 #### Example Response
+
 ```
 {
     "data": {
@@ -129,18 +147,25 @@ Available statistics:
     }
 }
 ```
+
 ### GET: /matches/{match_id}/events
+
 Return events of the match.</br>
 
 Available events:
+
 1. Goal
 2. Yellow card
 3. Red card
 4. Substitution
 5. Missed penalty
+
 #### Example Request
+
 `GET /api/matches/3325351/events`
+
 #### Example Response
+
 ```
 {
     "data": [
@@ -238,16 +263,23 @@ Available events:
     ]
 }
 ```
+
 ### GET: /matches/{match_id}/lineups
+
 Return lineups of the match.</br>
 
 Available datas:
+
 1. Formation
 2. Start XI and their positions
 3. Substitutes
+
 #### Example Request
+
 `GET /api/matches/3325351/lineups`
+
 #### Example Response
+
 ```
 {
     "home": {

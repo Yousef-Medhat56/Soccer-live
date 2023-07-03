@@ -6,8 +6,7 @@ export const getLeagues = (
   $: cheerio.CheerioAPI,
   element: cheerio.Cheerio<cheerio.Element>
 ): LeagueLink[] => {
-  
-    //leagues array
+  //leagues array
   const leaguesArr: LeagueLink[] = [];
 
   //loop through leagues
@@ -15,7 +14,7 @@ export const getLeagues = (
     const league: LeagueLink = {
       name: $(this).find("h3").text(),
       img: $(this).find("img").attr("src"),
-      url: removePartfromStr($(this).attr("href")!,"/league/"),
+      url: removePartfromStr($(this).attr("href")!, "/league/"),
     };
     leaguesArr.push(league);
   });
