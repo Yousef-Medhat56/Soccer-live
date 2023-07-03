@@ -1,5 +1,5 @@
 import { getMatches } from "@/app/api/matches/utils";
-import { MatchesInDay, Round } from "@/types/league/matches";
+import { MatchesInDay, OptionTag } from "@/types/league/matches";
 import * as cheerio from "cheerio";
 
 export async function GET(
@@ -38,7 +38,7 @@ export async function GET(
   //check if the fixtures table exists
   if ($(".matchtableX").length) {
     //rounds array
-    const roundsArr: Round[] = [];
+    const roundsArr: OptionTag[] = [];
 
     //the selected round
     let selectedRound: String = "";

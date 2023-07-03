@@ -5,7 +5,7 @@ export type MatchesInDay = {
   matches: Match[];
 };
 
-export type Round = {
+export type OptionTag = {
   name: String;
   queryStr: String;
 };
