@@ -15,20 +15,28 @@ export async function GET(
   //get "round" value from query string
   const round = new URL(req.url as string).searchParams.get("round");
 
-  const url = round
+  let url = round
     ? `https://www.btolat.com/league/fixtures/${id}/${slug}?week=${round}`
     : `https://www.btolat.com/league/fixtures/${id}/${slug}`;
 
   //fetch data
   let response = await fetch(url);
 
-  const data = await response.text();
+  let data = await response.text();
 
   //load data to cheerio
-  const $ = cheerio.load(data);
-
+  let $ = cheerio.load(data);
+  
+  //if the round value is invalid, refetch the page without the round query string
+  if (round && !$(".matchtableX").length && $("select").length) {
+    url = `https://www.btolat.com/league/fixtures/${id}/${slug}`;
+    response = await fetch(url);
+    data = await response.text();
+    $ = cheerio.load(data)
+  }
+  
   //check if the fixtures table exists
-  if ($(".leagueTables").length) {
+  if ($(".matchtableX").length) {
     //rounds array
     const roundsArr: Round[] = [];
 
@@ -48,7 +56,7 @@ export async function GET(
 
     //array of matches in the round
     const roundMatches: MatchesInDay[] = [];
-    
+
     //loop through days
     $("div.matchDate").each(function (index) {
       const date = $(this).find("h4").text();
