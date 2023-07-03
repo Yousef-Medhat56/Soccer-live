@@ -1,6 +1,7 @@
 export type Match = {
   matchId: string;
   matchStatus: string;
+  league?:String;
   matchTime?: string;
   homeName: string;
   homeImg?: string;

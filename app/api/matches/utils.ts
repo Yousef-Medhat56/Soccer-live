@@ -9,7 +9,7 @@ export const getMatches = (
   const matchesArr: Match[] = [];
 
   //loop through matches
-  element.children().each(function () {
+  element.find(".fullMatchBox").each(function () {
     //Match status
     let matchStatus: string;
     switch ($(this).find(".status").text()) {
