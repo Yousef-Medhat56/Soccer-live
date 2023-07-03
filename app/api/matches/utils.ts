@@ -31,17 +31,21 @@ export const getMatches = (
 
     //create match object
     const match: Match = {
-      matchId: $(this).find("a.stat").attr("href")!.split("/")[3],
-      matchStatus: matchStatus!,
-      matchTime: $(this).find(".matchDate span").text() || undefined,
-      homeName: homeTeamElm.find(".teamName").text(),
-      homeImg: homeTeamElm.find("img").attr("src"),
-      homeUrl: homeTeamElm.attr("href"),
-      homeScore: $(this).find(".team1G").text() || undefined,
-      awayName: awayTeamElm.find(".teamName").text(),
-      awayImg: awayTeamElm.find("img").attr("src"),
-      awayUrl: awayTeamElm.attr("href"),
-      awayScore: $(this).find(".team2G").text() || undefined,
+      id: $(this).find("a.stat").attr("href")!.split("/")[3],
+      status: matchStatus!,
+      time: $(this).find(".matchDate span").text() || undefined,
+      home: {
+        name: homeTeamElm.find(".teamName").text(),
+        img: homeTeamElm.find("img").attr("src"),
+        url: homeTeamElm.attr("href"),
+        goals: $(this).find(".team1G").text() || undefined,
+      },
+      away: {
+        name: awayTeamElm.find(".teamName").text(),
+        img: awayTeamElm.find("img").attr("src"),
+        url: awayTeamElm.attr("href"),
+        goals: $(this).find(".team2G").text() || undefined,
+      },
     };
 
     matchesArr.push(match);

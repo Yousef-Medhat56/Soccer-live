@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { Match, TeamInMatch } from "@/types/matches/history-details";
+import { Match, TeamInMatch } from "@/types/matches/match";
 
 // get array of old matches details
 export const getOldMatchesArr = (
@@ -23,25 +23,27 @@ export const getOldMatchesArr = (
     const homeTeamDiv = $(this).find(".teamA");
     const homeTeam: TeamInMatch = {
       name: homeTeamDiv.find("a").text(),
-      teamlUrl: homeTeamDiv.find("a").attr("href")!,
-      teamImg: homeTeamDiv.find("img").attr("src")!,
-      teamGoals: +homeTeamDiv.find("span").text(),
+      url: homeTeamDiv.find("a").attr("href")!,
+      img: homeTeamDiv.find("img").attr("src")!,
+      goals: homeTeamDiv.find("span").text(),
     };
 
     //away team
     const awayTeamDiv = $(this).find(".teamB");
     const awayTeam: TeamInMatch = {
       name: awayTeamDiv.find("a").text(),
-      teamlUrl: awayTeamDiv.find("a").attr("href")!,
-      teamImg: awayTeamDiv.find("img").attr("src")!,
-      teamGoals: +awayTeamDiv.find("span").text(),
+      url: awayTeamDiv.find("a").attr("href")!,
+      img: awayTeamDiv.find("img").attr("src")!,
+      goals: awayTeamDiv.find("span").text(),
     };
 
     const match: Match = {
+      id:"",
+      status:"finished",
       league,
-      date: matchDate,
-      homeTeam,
-      awayTeam,
+      time: matchDate,
+      home:homeTeam,
+      away:awayTeam,
     };
     oldMatchesArr.push(match);
   });

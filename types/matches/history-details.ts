@@ -1,18 +1,5 @@
 import { GroupStandings } from "../league/standings";
-
-export type TeamInMatch = {
-  name: string;
-  teamlUrl: string;
-  teamImg: string;
-  teamGoals: number;
-};
-
-export type Match = {
-  date: string;
-  league: string;
-  homeTeam: TeamInMatch;
-  awayTeam: TeamInMatch;
-};
+import { Match } from "./match";
 
 export type F2FHistory = {
   total: number;

@@ -1,12 +1,12 @@
 import {
   F2FHistory,
-  Match,
   MatchHistoryDetails,
 } from "@/types/matches/history-details";
 import * as cheerio from "cheerio";
 import { getOldMatchesArr } from "./utils";
 import { getStandings } from "@/app/api/leagues/[id]/[slug]/standings/utils";
 import { GroupStandings } from "@/types/league/standings";
+import { Match } from "@/types/matches/match";
 
 export async function GET(
   req: Request,
