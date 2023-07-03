@@ -1,12 +1,17 @@
 import { GroupStandings, TeamInStandings } from "@/types/league/standings";
 import * as cheerio from "cheerio";
 
-export const getStandings = ($: cheerio.CheerioAPI): GroupStandings[] => {
+export const getStandings = (
+  $: cheerio.CheerioAPI,
+  element: cheerio.Cheerio<cheerio.Element>
+): GroupStandings[] => {
+  
   const leagueStandings: GroupStandings[] = [];
-  $(".leagueTable").each(function () {
+  
+  element.each(function () {
     const groupTitle = $(this).find(".groupTitle").text();
-    const teamStandings: TeamInStandings[] = []; 
-    
+    const teamStandings: TeamInStandings[] = [];
+
     $(this)
       .find("tbody tr")
       .each(function () {
@@ -40,7 +45,7 @@ export const getStandings = ($: cheerio.CheerioAPI): GroupStandings[] => {
             //@ts-ignore
             else team[teamObjKeys[index]] = +$(this).text();
           });
-        teamStandings.push(team);
+        if (team["teamData"].name) teamStandings.push(team);
       });
     leagueStandings.push({ groupName: groupTitle, standings: teamStandings });
   });
