@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import { Match, TeamInMatch } from "@/types/history-details";
+import { Match, TeamInMatch } from "@/types/matches/history-details";
 
 // get array of old matches details
 export const getOldMatchesArr = (

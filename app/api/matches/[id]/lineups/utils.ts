@@ -1,4 +1,4 @@
-import { PlayerInLineup, TeamLineup } from "@/types/lineup";
+import { PlayerInLineup, TeamLineup } from "@/types/matches/lineup";
 import * as cheerio from "cheerio";
 
 //players positions by number of formation lines

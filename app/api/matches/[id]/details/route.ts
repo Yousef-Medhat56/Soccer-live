@@ -2,10 +2,11 @@ import {
   F2FHistory,
   Match,
   MatchHistoryDetails,
-  TeamInMatch,
-} from "@/types/history-details";
+} from "@/types/matches/history-details";
 import * as cheerio from "cheerio";
 import { getOldMatchesArr } from "./utils";
+import { getStandings } from "@/app/api/leagues/[id]/[slug]/standings/utils";
+import { GroupStandings } from "@/types/league/standings";
 
 export async function GET(
   req: Request,
@@ -69,6 +70,14 @@ export async function GET(
       });
     }
 
+    //standings array
+    let standings: GroupStandings[] = [];
+
+    //check if the standings table exists
+    if ($(".leagueTable").length) {
+      standings = getStandings($, $(".leagueTable"));
+    }
+    
     const sectionsLength = $(".card").length;
 
     //home last matches
@@ -86,6 +95,7 @@ export async function GET(
       f2fBigWins: bigWinsArr,
       homeLastMatches: homeLastMatchesArr,
       awayLastMatches: awayLastMatchesArr,
+      standings,
     };
 
     return new Response(

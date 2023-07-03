@@ -1,3 +1,5 @@
+import { GroupStandings } from "../league/standings";
+
 export type TeamInMatch = {
   name: string;
   teamlUrl: string;
@@ -26,4 +28,5 @@ export type MatchHistoryDetails = {
   f2fBigWins?: Match[]; //face to face big wins
   homeLastMatches?: Match[];
   awayLastMatches?: Match[];
+  standings?:GroupStandings[]
 };
