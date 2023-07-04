@@ -9,44 +9,46 @@ export const getMatches = (
   const matchesArr: Match[] = [];
 
   //loop through matches
-  element
-    .children()
-    .each(function () {
-      //Match status
-      let matchStatus: string;
-      switch ($(this).find(".status").text()) {
-        case "لم تبدأ":
-          matchStatus = "not started";
-          break;
-        case "مباشر":
-          matchStatus = "live";
-          break;
-        case "انتهت":
-          matchStatus = "finished";
-      }
+  element.find(".fullMatchBox").each(function () {
+    //Match status
+    let matchStatus: string;
+    switch ($(this).find(".status").text()) {
+      case "لم تبدأ":
+        matchStatus = "not started";
+        break;
+      case "مباشر":
+        matchStatus = "live";
+        break;
+      case "انتهت":
+        matchStatus = "finished";
+    }
 
-      // Home team
-      const homeTeamElm = $(this).find(".team1");
+    // Home team
+    const homeTeamElm = $(this).find(".team1");
 
-      //Away team
-      const awayTeamElm = $(this).find(".team2");
+    //Away team
+    const awayTeamElm = $(this).find(".team2");
 
-      //create match object
-      const match: Match = {
-        matchId: $(this).find("a.stat").attr("href")!.split("/")[3],
-        matchStatus: matchStatus!,
-        matchTime: $(this).find(".matchDate span").text() || undefined,
-        homeName: homeTeamElm.find(".teamName").text(),
-        homeImg: homeTeamElm.find("img").attr("src"),
-        homeUrl: homeTeamElm.attr("href"),
-        homeScore: $(this).find(".team1G").text() || undefined,
-        awayName: awayTeamElm.find(".teamName").text(),
-        awayImg: awayTeamElm.find("img").attr("src"),
-        awayUrl: awayTeamElm.attr("href"),
-        awayScore: $(this).find(".team2G").text() || undefined,
-      };
+    //create match object
+    const match: Match = {
+      id: $(this).find("a.stat").attr("href")!.split("/")[3],
+      status: matchStatus!,
+      time: $(this).find(".matchDate span").text() || undefined,
+      home: {
+        name: homeTeamElm.find(".teamName").text(),
+        img: homeTeamElm.find("img").attr("src"),
+        url: homeTeamElm.attr("href"),
+        goals: $(this).find(".team1G").text() || undefined,
+      },
+      away: {
+        name: awayTeamElm.find(".teamName").text(),
+        img: awayTeamElm.find("img").attr("src"),
+        url: awayTeamElm.attr("href"),
+        goals: $(this).find(".team2G").text() || undefined,
+      },
+    };
 
-      matchesArr.push(match);
-    });
+    matchesArr.push(match);
+  });
   return matchesArr;
 };

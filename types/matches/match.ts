@@ -1,15 +1,17 @@
+export type TeamInMatch = {
+  name: string;
+  url?: string;
+  img?: string;
+  goals?: string;
+};
+
 export type Match = {
-  matchId: string;
-  matchStatus: string;
-  matchTime?: string;
-  homeName: string;
-  homeImg?: string;
-  homeUrl?: string;
-  homeScore?: string;
-  awayName: string;
-  awayImg?: string;
-  awayUrl?: string;
-  awayScore?: string;
+  id: string;
+  status: string;
+  league?: String;
+  time?: string;
+  home: TeamInMatch;
+  away: TeamInMatch;
 };
 
 export type LeagueMatches = {

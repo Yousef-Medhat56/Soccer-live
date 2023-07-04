@@ -1,5 +1,5 @@
 import { getMatches } from "@/app/api/matches/utils";
-import { MatchesInDay, Round } from "@/types/league/matches";
+import { MatchesInDay, OptionTag } from "@/types/league/matches";
 import * as cheerio from "cheerio";
 
 export async function GET(
@@ -26,19 +26,19 @@ export async function GET(
 
   //load data to cheerio
   let $ = cheerio.load(data);
-  
+
   //if the round value is invalid, refetch the page without the round query string
   if (round && !$(".matchtableX").length && $("select").length) {
     url = `https://www.btolat.com/league/fixtures/${id}/${slug}`;
     response = await fetch(url);
     data = await response.text();
-    $ = cheerio.load(data)
+    $ = cheerio.load(data);
   }
-  
+
   //check if the fixtures table exists
   if ($(".matchtableX").length) {
     //rounds array
-    const roundsArr: Round[] = [];
+    const roundsArr: OptionTag[] = [];
 
     //the selected round
     let selectedRound: String = "";
