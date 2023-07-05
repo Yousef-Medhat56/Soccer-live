@@ -1,4 +1,5 @@
 import { Match } from "@/types/matches/match";
+import { removePartfromStr } from "@/utils/string-manipulator";
 import * as cheerio from "cheerio";
 
 export const getMatches = (
@@ -37,13 +38,13 @@ export const getMatches = (
       home: {
         name: homeTeamElm.find(".teamName").text(),
         img: homeTeamElm.find("img").attr("src"),
-        url: homeTeamElm.attr("href"),
+        url: removePartfromStr(homeTeamElm.attr("href")!, "/team/"),
         goals: $(this).find(".team1G").text() || undefined,
       },
       away: {
         name: awayTeamElm.find(".teamName").text(),
         img: awayTeamElm.find("img").attr("src"),
-        url: awayTeamElm.attr("href"),
+        url: removePartfromStr(awayTeamElm.attr("href")!, "/team/"),
         goals: $(this).find(".team2G").text() || undefined,
       },
     };

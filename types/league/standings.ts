@@ -2,7 +2,7 @@ export type TeamInStandings = {
   order: Number;
   teamData: {
     name: String;
-    url: String;
+    url?: String;
     img: String;
   };
   matchesPlayed: Number;

@@ -1,4 +1,5 @@
 import { GroupStandings, TeamInStandings } from "@/types/league/standings";
+import { removePartfromStr } from "@/utils/string-manipulator";
 import * as cheerio from "cheerio";
 
 export const getStandings = (
@@ -18,7 +19,6 @@ export const getStandings = (
           order: 0,
           teamData: {
             name: "",
-            url: "",
             img: "",
           },
           matchesPlayed: 0,
@@ -35,9 +35,11 @@ export const getStandings = (
         $(this)
           .children()
           .each(function (index) {
+            const teamUrl = $(this).find("a").attr("href");
             if (index == 1) {
               team["teamData"].name = $(this).find("a").text().trim(); //team name
-              team["teamData"].url = $(this).find("a").attr("href")!; //team url
+              team["teamData"].url =
+                teamUrl && removePartfromStr(teamUrl, "/team/"); //team url
               team["teamData"].img = $(this).find("img").attr("src")!; //team image
             }
 

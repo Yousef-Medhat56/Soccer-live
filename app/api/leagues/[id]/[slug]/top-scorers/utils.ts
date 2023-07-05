@@ -1,4 +1,5 @@
 import { TopScorer } from "@/types/league/top-scorer";
+import { removePartfromStr } from "@/utils/string-manipulator";
 import * as cheerio from "cheerio";
 
 export const getTopScorers = ($: cheerio.CheerioAPI): TopScorer[] => {
@@ -22,13 +23,19 @@ export const getTopScorers = ($: cheerio.CheerioAPI): TopScorer[] => {
           // scrape player data
           if (col_index == 1) {
             topScorer.playerData.name = $(this).find("b").text();
-            topScorer.playerData.url = $(this).find("a").attr("href");
+            topScorer.playerData.url = removePartfromStr(
+              $(this).find("a").attr("href")!,
+              "/player/"
+            );
             topScorer.playerData.img = $(this).find("img").attr("src");
           }
           //scrape club data
           else if (col_index == 2) {
             topScorer.clubData.name = $(this).find("b").text();
-            topScorer.clubData.url = $(this).find("a").attr("href");
+            topScorer.clubData.url = removePartfromStr(
+              $(this).find("a").attr("href")!,
+              "/team/"
+            );
             topScorer.clubData.img = $(this).find("img").attr("src");
           }
           //scrape goals number
