@@ -42,6 +42,62 @@ Scraped from `btolat.com/team/8883/al-ahly/`
   }
 }
 ```
+### GET: /club/[club_id]/[club_slug]/matches
+Return matches of the club.
+
+#### Parameters
+| Parameter | Type   | Required | Description                            |
+| --------- | ------ | -------- | -------------------------------------- |
+| previous      | boolean | false    | If `true`, returns the previous matches of the club. |
+| league      | string | false    | The league id, returns the club matches in the given league only. |
+
+#### Example Request
+`GET /api/club/16110/real-madrid/matches?previous=true&league=1005`
+
+Scraped from `btolat.com/team/matchesended/16110/real-madrid?leagueid=1005`
+
+#### Example Response
+```
+{
+  "data": {
+    "tournaments": [
+      {
+        "name": "الدوري الاسباني",
+        "queryStr": "1399"
+      },
+      {
+        "name": "دوري أبطال أوروبا",
+        "queryStr": "1005"
+      },
+     ...
+    ],
+    "selectedTournament": {
+      "tournamentQueryStr": "1005",
+      "matches": [
+        {
+          "id": "3321012",
+          "status": "finished",
+          "time": " 17.05.2023   10:00 م",
+          "home": {
+            "name": "مانشستر سيتي",
+            "img": "https://img.btolat.com/teamslogo/9259.png?v=922",
+            "url": "9259/manchester-city",
+            "goals": "4 "
+          },
+          "away": {
+            "name": "ريال مدريد",
+            "img": "https://img.btolat.com/teamslogo/16110.png?v=829",
+            "url": "16110/real-madrid",
+            "goals": "0 "
+          },
+          "league": "دوري أبطال أوروبا"
+        },
+       ....
+      ]
+    }
+  }
+}
+```
 ### GET: /club/[club_id]/[club_slug]/squad
 Return the squad of the club.
 
