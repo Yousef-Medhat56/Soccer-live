@@ -1,7 +1,7 @@
 # Leagues
 Get information about a league, such as: standings, matches, top scorers.
 
-## Enpoints
+## Endpoints
 ### GET: /leagues
 Return a list of the most popular leagues around the world and the available leagues.
 
@@ -121,5 +121,73 @@ Scraped from `https://www.btolat.com/league/standings/1193/premier-league`
           ....
     }
   ]
+}
+```
+### GET: /leagues/[league_id]/[league_slug]/top-scorers
+Return top scorers of the league.
+#### Example Request
+`GET /api/leagues/1204/premier-league/top-scorers`
+Scraped from `https://www.btolat.com/league/topscores/1204/premier-league`
+
+#### Example Response
+```
+{
+  "data": {
+    "topScorers": [
+      {
+        "playerData": {
+          "name": "إيرلينج هالاند",
+          "url": "441484/e-h-land",
+          "img": "//img.btolat.com/playerslogo/441484.png?v=509"
+        },
+        "clubData": {
+          "name": "مانشستر سيتي ",
+          "url": "9259/manchester-city",
+          "img": "//img.btolat.com/teamslogo/9259.png?v=922"
+        },
+        "goalsNum": 36
+      },
+      {
+        "playerData": {
+          "name": "هاري كين",
+          "url": "158575/h-kane",
+          "img": "//img.btolat.com/playerslogo/158575.png?v=540"
+        },
+        "clubData": {
+          "name": "إنجلترا ",
+          "url": "8981/england",
+          "img": "//img.btolat.com/teamslogo/8981.png?v=703"
+        },
+        "goalsNum": 30
+      },
+      {
+        "playerData": {
+          "name": "إيفان طوني",
+          "url": "277348/i-toney",
+          "img": "//img.btolat.com/playerslogo/277348.png?v=492"
+        },
+        "clubData": {
+          "name": "برينتفورد ",
+          "url": "9059/brentford",
+          "img": "//img.btolat.com/teamslogo/9059.png?v=523"
+        },
+        "goalsNum": 20
+      },
+      {
+        "playerData": {
+          "name": "محمد صلاح",
+          "url": "138653/mohamed-salah",
+          "img": "//img.btolat.com/playerslogo/138653.png?v=148"
+        },
+        "clubData": {
+          "name": "ليفربول ",
+          "url": "9249/liverpool",
+          "img": "//img.btolat.com/teamslogo/9249.png?v=112"
+        },
+        "goalsNum": 19
+      },
+     ...
+    ]
+  }
 }
 ```
