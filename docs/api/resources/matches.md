@@ -22,60 +22,175 @@ Return list of all the matches of a specific day (default: today).
 
 ```
 {
-    "data": {
-        "allMatches": [
-            {
-                "leagueId": "1005",
-                "leagueName": "دوري أبطال أوروبا",
-                "leagueImg": "https://img.btolat.com/tourlogo/84aa6db5-64e9-439b-a595-2040420fa1e2.png",
-                "matches": [
-                    {
-                        "matchId": "3325351",
-                        "matchStatus": "finished",
-                        "homeName": "مانشستر سيتي",
-                        "homeImg": "https://img.btolat.com/teamslogo/9259.png?v=922",
-                        "homeUrl": "/team/9259/manchester-city",
-                        "homeScore": "1",
-                        "awayName": "إنتر ميلان",
-                        "awayImg": "https://img.btolat.com/teamslogo/11917.png?v=91",
-                        "awayUrl": "/team/11917/internazionale",
-                        "awayScore": "0"
-                    }
-                ]
+  "data": {
+    "allMatches": [
+      {
+        "leagueId": "1005",
+        "leagueName": "دوري أبطال أوروبا",
+        "leagueImg": "https://img.btolat.com/tourlogo/84aa6db5-64e9-439b-a595-2040420fa1e2.png",
+        "matches": [
+          {
+            "id": "3325351",
+            "status": "finished",
+            "home": {
+              "name": "مانشستر سيتي",
+              "img": "https://img.btolat.com/teamslogo/9259.png?v=922",
+              "url": "9259/manchester-city",
+              "goals": "1"
             },
-            {
-                "leagueId": "1420",
-                "leagueName": "الدوري التونسي",
-                "leagueImg": "https://img.btolat.com/tourlogo/7818215b-7bdd-4e90-8bdc-aa5538018650.png",
-                "matches": [
-                    {
-                        "matchId": "3315751",
-                        "matchStatus": "finished",
-                        "homeName": "النادي الأفريقي",
-                        "homeImg": "https://img.btolat.com/teamslogo/16921.png?v=464",
-                        "homeUrl": "/team/16921/club-africain",
-                        "homeScore": "1",
-                        "awayName": "الاتحاد المنستيري",
-                        "awayImg": "https://img.btolat.com/teamslogo/16944.png?v=242",
-                        "awayUrl": "/team/16944/monastir",
-                        "awayScore": "1"
-                    },
-                    {
-                        "matchId": "3315752",
-                        "matchStatus": "finished",
-                        "homeName": "النجم الساحلي",
-                        "homeImg": "https://img.btolat.com/teamslogo/16934.png?v=717",
-                        "homeUrl": "/team/16934/etoile-du-sahel",
-                        "homeScore": "0",
-                        "awayName": "الترجي التونسي",
-                        "awayImg": "https://img.btolat.com/teamslogo/16933.png?v=298",
-                        "awayUrl": "/team/16933/es-tunis",
-                        "awayScore": "0"
-                    }
-                ]
+            "away": {
+              "name": "إنتر ميلان",
+              "img": "https://img.btolat.com/teamslogo/11917.png?v=91",
+              "url": "11917/internazionale",
+              "goals": "0"
             }
+          }
         ]
-    }
+      },
+      {
+        "leagueId": "1420",
+        "leagueName": "الدوري التونسي",
+        "leagueImg": "https://img.btolat.com/tourlogo/7818215b-7bdd-4e90-8bdc-aa5538018650.png",
+        "matches": [
+          {
+            "id": "3315751",
+            "status": "finished",
+            "home": {
+              "name": "النادي الأفريقي",
+              "img": "https://img.btolat.com/teamslogo/16921.png?v=464",
+              "url": "16921/club-africain",
+              "goals": "1"
+            },
+            "away": {
+              "name": "الاتحاد المنستيري",
+              "img": "https://img.btolat.com/teamslogo/16944.png?v=242",
+              "url": "16944/monastir",
+              "goals": "1"
+            }
+          },
+          {
+            "id": "3315752",
+            "status": "finished",
+            "home": {
+              "name": "النجم الساحلي",
+              "img": "https://img.btolat.com/teamslogo/16934.png?v=717",
+              "url": "16934/etoile-du-sahel",
+              "goals": "0"
+            },
+            "away": {
+              "name": "الترجي التونسي",
+              "img": "https://img.btolat.com/teamslogo/16933.png?v=298",
+              "url": "16933/es-tunis",
+              "goals": "0"
+            }
+          }
+        ]
+      },
+      {
+        "leagueId": "1440",
+        "leagueName": "الدوري الامريكي الممتاز",
+        "leagueImg": "https://img.btolat.com/",
+        "matches": [
+          {
+            "id": "3277024",
+            "status": "finished",
+            "home": {
+              "name": "أتالانتا يونايتد",
+              "img": "https://img.btolat.com/teamslogo/27212.png?v=103",
+              "url": "27212/atlanta-united",
+              "goals": "3"
+            },
+            "away": {
+              "name": "دي سي يونايتد",
+              "img": "https://img.btolat.com/teamslogo/17310.png?v=90",
+              "url": "17310/dc-united",
+              "goals": "1"
+            }
+          },
+          {
+            "id": "3277025",
+            "status": "finished",
+            "home": {
+              "name": "شارلوت",
+              "img": "https://img.btolat.com/teamslogo/35765.png?v=902",
+              "url": "35765/charlotte",
+              "goals": "3"
+            },
+            "away": {
+              "name": "سياتل ساوندرز",
+              "img": "https://img.btolat.com/teamslogo/17385.png?v=623",
+              "url": "17385/seattle-sounders",
+              "goals": "3"
+            }
+          },
+          {
+            "id": "3277026",
+            "status": "finished",
+            "home": {
+              "name": "مونتريال إمباكت",
+              "img": "https://img.btolat.com/teamslogo/7920.png?v=460",
+              "url": "7920/montreal-impact",
+              "goals": "4"
+            },
+            "away": {
+              "name": "مينيسوتا",
+              "img": "https://img.btolat.com/teamslogo/17345.png?v=677",
+              "url": "17345/minnesota-united",
+              "goals": "0"
+            }
+          },
+          {
+            "id": "3277027",
+            "status": "finished",
+            "home": {
+              "name": "نيو إنجلاند",
+              "img": "https://img.btolat.com/teamslogo/17349.png?v=418",
+              "url": "17349/new-england",
+              "goals": "3"
+            },
+            "away": {
+              "name": "إنتر ميامي",
+              "img": "https://img.btolat.com/teamslogo/32374.png?v=344",
+              "url": "32374/",
+              "goals": "1"
+            }
+          },
+          {
+            "id": "3277028",
+            "status": "finished",
+            "home": {
+              "name": "أورلاندو سيتي",
+              "img": "https://img.btolat.com/teamslogo/24303.png?v=304",
+              "url": "24303/orlando-city",
+              "goals": "2"
+            },
+            "away": {
+              "name": "كولورادو رابيدز",
+              "img": "https://img.btolat.com/teamslogo/17304.png?v=829",
+              "url": "17304/colorado-rapids",
+              "goals": "0"
+            }
+          },
+          {
+            "id": "3277029",
+            "status": "finished",
+            "home": {
+              "name": "تورونتو",
+              "img": "https://img.btolat.com/teamslogo/7940.png?v=262",
+              "url": "7940/toronto",
+              "goals": "1"
+            },
+            "away": {
+              "name": "ناشفيل",
+              "img": "https://img.btolat.com/teamslogo/29167.png?v=893",
+              "url": "29167/nashville-sc",
+              "goals": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
