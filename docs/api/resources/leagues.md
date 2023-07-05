@@ -57,6 +57,17 @@ Scraped from `https://www.btolat.com/leagues`
 ```
 ### GET: /leagues/[league_id]/[league_slug]/standings
 Return standings of the league.
+
+The data about each team:
+1. Matches played.
+2. Wins.
+3. Draws.
+4. Losses.
+5. Total goals for.
+6. Total goals against.
+7. Goals difference.
+8. Points.
+
 #### Example Request
 `GET /api/leagues/1193/premier-league/standings`
 
