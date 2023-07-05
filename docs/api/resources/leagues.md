@@ -1,16 +1,21 @@
 # Leagues
+
 Get information about a league, such as: standings, matches, top scorers.
 
 ## Endpoints
+
 ### GET: /leagues
+
 Return a list of the most popular leagues around the world and the available leagues.
 
 #### Example Request
+
 `GET /api/leagues`
 
 Scraped from `https://www.btolat.com/leagues`
 
 #### Example Response
+
 ```
 {
   "data": {
@@ -55,10 +60,13 @@ Scraped from `https://www.btolat.com/leagues`
   }
 }
 ```
+
 ### GET: /leagues/[league_id]/[league_slug]/standings
+
 Return standings of the league.
 
 The data about each team:
+
 1. Matches played.
 2. Wins.
 3. Draws.
@@ -69,11 +77,13 @@ The data about each team:
 8. Points.
 
 #### Example Request
+
 `GET /api/leagues/1193/premier-league/standings`
 
 Scraped from `https://www.btolat.com/league/standings/1193/premier-league`
 
 #### Example Response
+
 ```
 {
   "data": {
@@ -134,21 +144,25 @@ Scraped from `https://www.btolat.com/league/standings/1193/premier-league`
   ]
 }
 ```
+
 ### GET: /leagues/[league_id]/[league_slug]/matches
+
 Return data about the league rounds and matches.
 
 #### Parameters
 
-| Parameter | Type   | Required | Description                            |
-| --------- | ------ | -------- | -------------------------------------- |
-| round      | string | false    | The round of matches                  |
+| Parameter | Type   | Required | Description          |
+| --------- | ------ | -------- | -------------------- |
+| round     | string | false    | The round of matches |
 
 #### Example Request
+
 `GET /api/leagues/1204/premier-league/matches?round=4`
 
 Scraped from `btolat.com/league/fixtures/1204/premier-league?week=4`
 
 #### Example Response
+
 ```
 {
   "data": {
@@ -236,14 +250,19 @@ Scraped from `btolat.com/league/fixtures/1204/premier-league?week=4`
   }
 }
 ```
+
 ### GET: /leagues/[league_id]/[league_slug]/top-scorers
+
 Return top scorers of the league.
+
 #### Example Request
+
 `GET /api/leagues/1204/premier-league/top-scorers`
 
 Scraped from `https://www.btolat.com/league/topscores/1204/premier-league`
 
 #### Example Response
+
 ```
 {
   "data": {

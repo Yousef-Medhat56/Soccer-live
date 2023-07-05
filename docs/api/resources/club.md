@@ -1,11 +1,15 @@
 # Clubs
+
 Return data about the club, such as: squad and matches.
 
 ## Endpoints
+
 ### GET: /club/[club_id]/[club_slug]
+
 Get details about the club.
 
 The available details:
+
 1. The club country.
 2. Year of foundation.
 3. The club stadium.
@@ -13,11 +17,13 @@ The available details:
 5. The leagues that the club paricipates in.
 
 #### Example Request
+
 `GET /api/club/8883/al-ahly/`
 
 Scraped from `btolat.com/team/8883/al-ahly/`
 
 #### Example Response
+
 ```
 {
   "data": {
@@ -42,21 +48,26 @@ Scraped from `btolat.com/team/8883/al-ahly/`
   }
 }
 ```
+
 ### GET: /club/[club_id]/[club_slug]/matches
+
 Return matches of the club.
 
 #### Parameters
-| Parameter | Type   | Required | Description                            |
-| --------- | ------ | -------- | -------------------------------------- |
-| previous      | boolean | false    | If `true`, returns the previous matches of the club. |
-| league      | string | false    | The league id, returns the club matches in the given league only. |
+
+| Parameter | Type    | Required | Description                                                       |
+| --------- | ------- | -------- | ----------------------------------------------------------------- |
+| previous  | boolean | false    | If `true`, returns the previous matches of the club.              |
+| league    | string  | false    | The league id, returns the club matches in the given league only. |
 
 #### Example Request
+
 `GET /api/club/16110/real-madrid/matches?previous=true&league=1005`
 
 Scraped from `btolat.com/team/matchesended/16110/real-madrid?leagueid=1005`
 
 #### Example Response
+
 ```
 {
   "data": {
@@ -98,10 +109,13 @@ Scraped from `btolat.com/team/matchesended/16110/real-madrid?leagueid=1005`
   }
 }
 ```
+
 ### GET: /club/[club_id]/[club_slug]/squad
+
 Return the squad of the club.
 
 The available data for the players in the squad:
+
 1. Player name.
 2. Player image.
 3. Position.
@@ -109,10 +123,13 @@ The available data for the players in the squad:
 5. Birth date.
 
 #### Example Request
+
 `GET /api/club/9092/chelsea/squad`
 
 Scraped from `btolat.com/team/squad/9092/chelsea`
+
 #### Example Response
+
 ```
 {
   "data": {

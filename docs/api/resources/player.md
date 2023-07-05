@@ -1,11 +1,15 @@
 # Players
+
 Get data about the player, such as: statistics and transfers.
 
 ## Endpoints
+
 ### GET: /player/[player_id]/[player_slug]
+
 Return details about the player.
 
 Available details:
+
 1. Player nationality
 2. The player's club
 3. Player image.
@@ -15,11 +19,13 @@ Available details:
 7. Weight.
 
 #### Example Request
+
 `GET /api/player/39358/e-hazard`
 
 Scraped from `btolat.com/player/39358/e-hazard`
 
 #### Example Response
+
 ```
 {
   "data": {
@@ -41,9 +47,11 @@ Scraped from `btolat.com/player/39358/e-hazard`
 ```
 
 ### GET: /player/[player_id]/[player_slug]/stats
+
 Return the player statistics for every season he joined with his clubs in different leagues.
 
 Available statistics:
+
 1. Total appearances.
 2. Total played minutes.
 3. Total yellow cards.
@@ -52,10 +60,13 @@ Available statistics:
 6. Total goals.
 
 #### Example Request
+
 `GET /api/player/39358/e-hazard/stats`
 
 Scraped from `btolat.com/player/statics/39358/e-hazard`
+
 #### Example Response
+
 ```
 {
   "data": {
@@ -126,14 +137,19 @@ Scraped from `btolat.com/player/statics/39358/e-hazard`
   }
 }
 ```
+
 ### GET: /player/[player_id]/[player_slug]/transfers
+
 Return data about the player transfers.
 
-#### Example Request 
+#### Example Request
+
 `GET /api/player/39358/e-hazard/transfers`
 
 Scraped from `btolat.com/player/transfers/39358/e-hazard`
+
 #### Example Response
+
 ```
 {
   "data": {

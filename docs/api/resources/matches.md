@@ -636,10 +636,13 @@ Available datas:
     }
 }
 ```
+
 ### GET: /matches/{match_id}/details
+
 Return details about the 2 teams of the match.
 
 Available details:
+
 1. Face to face history.
 2. Face to face results.
 3. Face to face big wins.
@@ -648,9 +651,11 @@ Available details:
 6. Results of the away team last matches.
 
 #### Example Request
+
 `GET /api/matches/3330463/details`
 
 #### Example Response
+
 ```
 {
   "data": {

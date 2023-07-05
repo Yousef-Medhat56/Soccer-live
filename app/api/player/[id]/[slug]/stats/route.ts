@@ -79,7 +79,7 @@ export async function GET(
         });
       playerStats.teams.push(teamStats);
     });
-    
+
     return new Response(JSON.stringify({ data: { playerStats } }));
   } else {
     return new Response(
