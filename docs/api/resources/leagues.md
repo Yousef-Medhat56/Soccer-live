@@ -134,10 +134,113 @@ Scraped from `https://www.btolat.com/league/standings/1193/premier-league`
   ]
 }
 ```
+### GET: /leagues/[league_id]/[league_slug]/matches
+Return data about the league rounds and matches.
+
+#### Parameters
+
+| Parameter | Type   | Required | Description                            |
+| --------- | ------ | -------- | -------------------------------------- |
+| round      | string | false    | The round of matches                  |
+
+#### Example Request
+`GET /api/leagues/1204/premier-league/matches?round=4`
+
+Scraped from `btolat.com/league/fixtures/1204/premier-league?week=4`
+
+#### Example Response
+```
+{
+  "data": {
+    "rounds": [
+      {
+        "name": "الاسبوع 1",
+        "queryStr": "1"
+      },
+      {
+        "name": "الاسبوع 2",
+        "queryStr": "2"
+      },
+      {
+        "name": "الاسبوع 3",
+        "queryStr": "3"
+      },
+      {
+        "name": "الاسبوع 4",
+        "queryStr": "4"
+      },
+      ....
+    ],
+    "selectedRound": {
+      "roundQueryStr": "4",
+      "matches": [
+        {
+          "date": "السبت , 2 سبتمبر 2023",
+          "matches": [
+            {
+              "id": "3330485",
+              "status": "not started",
+              "time": "05:00 م",
+              "home": {
+                "name": "آرسنال",
+                "img": "https://img.btolat.com/teamslogo/9002.png?v=865",
+                "url": "9002/arsenal",
+                "goals": "  "
+              },
+              "away": {
+                "name": "مانشستر يونايتد",
+                "img": "https://img.btolat.com/teamslogo/9260.png?v=491",
+                "url": "9260/manchester-united",
+                "goals": "  "
+              }
+            },
+            {
+              "id": "3330486",
+              "status": "not started",
+              "time": "05:00 م",
+              "home": {
+                "name": "برينتفورد",
+                "img": "https://img.btolat.com/teamslogo/9059.png?v=523",
+                "url": "9059/brentford",
+                "goals": "  "
+              },
+              "away": {
+                "name": "بورنموث",
+                "img": "https://img.btolat.com/teamslogo/9053.png?v=674",
+                "url": "9053/afc-bournemouth",
+                "goals": "  "
+              }
+            },
+            {
+              "id": "3330487",
+              "status": "not started",
+              "time": "05:00 م",
+              "home": {
+                "name": "برايتون",
+                "img": "https://img.btolat.com/teamslogo/9065.png?v=842",
+                "url": "9065/brighton-hove-albion",
+                "goals": "  "
+              },
+              "away": {
+                "name": "نيوكاسل يونايتد",
+                "img": "https://img.btolat.com/teamslogo/9287.png?v=971",
+                "url": "9287/newcastle-united",
+                "goals": "  "
+              }
+            },
+            ...
+          ]
+        }
+      ]
+    }
+  }
+}
+```
 ### GET: /leagues/[league_id]/[league_slug]/top-scorers
 Return top scorers of the league.
 #### Example Request
 `GET /api/leagues/1204/premier-league/top-scorers`
+
 Scraped from `https://www.btolat.com/league/topscores/1204/premier-league`
 
 #### Example Response
