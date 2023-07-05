@@ -22,60 +22,175 @@ Return list of all the matches of a specific day (default: today).
 
 ```
 {
-    "data": {
-        "allMatches": [
-            {
-                "leagueId": "1005",
-                "leagueName": "دوري أبطال أوروبا",
-                "leagueImg": "https://img.btolat.com/tourlogo/84aa6db5-64e9-439b-a595-2040420fa1e2.png",
-                "matches": [
-                    {
-                        "matchId": "3325351",
-                        "matchStatus": "finished",
-                        "homeName": "مانشستر سيتي",
-                        "homeImg": "https://img.btolat.com/teamslogo/9259.png?v=922",
-                        "homeUrl": "/team/9259/manchester-city",
-                        "homeScore": "1",
-                        "awayName": "إنتر ميلان",
-                        "awayImg": "https://img.btolat.com/teamslogo/11917.png?v=91",
-                        "awayUrl": "/team/11917/internazionale",
-                        "awayScore": "0"
-                    }
-                ]
+  "data": {
+    "allMatches": [
+      {
+        "leagueId": "1005",
+        "leagueName": "دوري أبطال أوروبا",
+        "leagueImg": "https://img.btolat.com/tourlogo/84aa6db5-64e9-439b-a595-2040420fa1e2.png",
+        "matches": [
+          {
+            "id": "3325351",
+            "status": "finished",
+            "home": {
+              "name": "مانشستر سيتي",
+              "img": "https://img.btolat.com/teamslogo/9259.png?v=922",
+              "url": "9259/manchester-city",
+              "goals": "1"
             },
-            {
-                "leagueId": "1420",
-                "leagueName": "الدوري التونسي",
-                "leagueImg": "https://img.btolat.com/tourlogo/7818215b-7bdd-4e90-8bdc-aa5538018650.png",
-                "matches": [
-                    {
-                        "matchId": "3315751",
-                        "matchStatus": "finished",
-                        "homeName": "النادي الأفريقي",
-                        "homeImg": "https://img.btolat.com/teamslogo/16921.png?v=464",
-                        "homeUrl": "/team/16921/club-africain",
-                        "homeScore": "1",
-                        "awayName": "الاتحاد المنستيري",
-                        "awayImg": "https://img.btolat.com/teamslogo/16944.png?v=242",
-                        "awayUrl": "/team/16944/monastir",
-                        "awayScore": "1"
-                    },
-                    {
-                        "matchId": "3315752",
-                        "matchStatus": "finished",
-                        "homeName": "النجم الساحلي",
-                        "homeImg": "https://img.btolat.com/teamslogo/16934.png?v=717",
-                        "homeUrl": "/team/16934/etoile-du-sahel",
-                        "homeScore": "0",
-                        "awayName": "الترجي التونسي",
-                        "awayImg": "https://img.btolat.com/teamslogo/16933.png?v=298",
-                        "awayUrl": "/team/16933/es-tunis",
-                        "awayScore": "0"
-                    }
-                ]
+            "away": {
+              "name": "إنتر ميلان",
+              "img": "https://img.btolat.com/teamslogo/11917.png?v=91",
+              "url": "11917/internazionale",
+              "goals": "0"
             }
+          }
         ]
-    }
+      },
+      {
+        "leagueId": "1420",
+        "leagueName": "الدوري التونسي",
+        "leagueImg": "https://img.btolat.com/tourlogo/7818215b-7bdd-4e90-8bdc-aa5538018650.png",
+        "matches": [
+          {
+            "id": "3315751",
+            "status": "finished",
+            "home": {
+              "name": "النادي الأفريقي",
+              "img": "https://img.btolat.com/teamslogo/16921.png?v=464",
+              "url": "16921/club-africain",
+              "goals": "1"
+            },
+            "away": {
+              "name": "الاتحاد المنستيري",
+              "img": "https://img.btolat.com/teamslogo/16944.png?v=242",
+              "url": "16944/monastir",
+              "goals": "1"
+            }
+          },
+          {
+            "id": "3315752",
+            "status": "finished",
+            "home": {
+              "name": "النجم الساحلي",
+              "img": "https://img.btolat.com/teamslogo/16934.png?v=717",
+              "url": "16934/etoile-du-sahel",
+              "goals": "0"
+            },
+            "away": {
+              "name": "الترجي التونسي",
+              "img": "https://img.btolat.com/teamslogo/16933.png?v=298",
+              "url": "16933/es-tunis",
+              "goals": "0"
+            }
+          }
+        ]
+      },
+      {
+        "leagueId": "1440",
+        "leagueName": "الدوري الامريكي الممتاز",
+        "leagueImg": "https://img.btolat.com/",
+        "matches": [
+          {
+            "id": "3277024",
+            "status": "finished",
+            "home": {
+              "name": "أتالانتا يونايتد",
+              "img": "https://img.btolat.com/teamslogo/27212.png?v=103",
+              "url": "27212/atlanta-united",
+              "goals": "3"
+            },
+            "away": {
+              "name": "دي سي يونايتد",
+              "img": "https://img.btolat.com/teamslogo/17310.png?v=90",
+              "url": "17310/dc-united",
+              "goals": "1"
+            }
+          },
+          {
+            "id": "3277025",
+            "status": "finished",
+            "home": {
+              "name": "شارلوت",
+              "img": "https://img.btolat.com/teamslogo/35765.png?v=902",
+              "url": "35765/charlotte",
+              "goals": "3"
+            },
+            "away": {
+              "name": "سياتل ساوندرز",
+              "img": "https://img.btolat.com/teamslogo/17385.png?v=623",
+              "url": "17385/seattle-sounders",
+              "goals": "3"
+            }
+          },
+          {
+            "id": "3277026",
+            "status": "finished",
+            "home": {
+              "name": "مونتريال إمباكت",
+              "img": "https://img.btolat.com/teamslogo/7920.png?v=460",
+              "url": "7920/montreal-impact",
+              "goals": "4"
+            },
+            "away": {
+              "name": "مينيسوتا",
+              "img": "https://img.btolat.com/teamslogo/17345.png?v=677",
+              "url": "17345/minnesota-united",
+              "goals": "0"
+            }
+          },
+          {
+            "id": "3277027",
+            "status": "finished",
+            "home": {
+              "name": "نيو إنجلاند",
+              "img": "https://img.btolat.com/teamslogo/17349.png?v=418",
+              "url": "17349/new-england",
+              "goals": "3"
+            },
+            "away": {
+              "name": "إنتر ميامي",
+              "img": "https://img.btolat.com/teamslogo/32374.png?v=344",
+              "url": "32374/",
+              "goals": "1"
+            }
+          },
+          {
+            "id": "3277028",
+            "status": "finished",
+            "home": {
+              "name": "أورلاندو سيتي",
+              "img": "https://img.btolat.com/teamslogo/24303.png?v=304",
+              "url": "24303/orlando-city",
+              "goals": "2"
+            },
+            "away": {
+              "name": "كولورادو رابيدز",
+              "img": "https://img.btolat.com/teamslogo/17304.png?v=829",
+              "url": "17304/colorado-rapids",
+              "goals": "0"
+            }
+          },
+          {
+            "id": "3277029",
+            "status": "finished",
+            "home": {
+              "name": "تورونتو",
+              "img": "https://img.btolat.com/teamslogo/7940.png?v=262",
+              "url": "7940/toronto",
+              "goals": "1"
+            },
+            "away": {
+              "name": "ناشفيل",
+              "img": "https://img.btolat.com/teamslogo/29167.png?v=893",
+              "url": "29167/nashville-sc",
+              "goals": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -519,5 +634,385 @@ Available datas:
             }
         ]
     }
+}
+```
+### GET: /matches/{match_id}/details
+Return details about the 2 teams of the match.
+
+Available details:
+1. Face to face history.
+2. Face to face results.
+3. Face to face big wins.
+4. The teams' standings in the league.
+5. Results of the home team last matches.
+6. Results of the away team last matches.
+
+#### Example Request
+`GET /api/matches/3330463/details`
+
+#### Example Response
+```
+{
+  "data": {
+    "f2fHistory": {
+      "total": 182,
+      "homeWins": 56,
+      "draw": 51,
+      "awayWins": 75
+    },
+    "f2fResults": [
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "04.04.2023",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "0"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "0"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "21.01.2023",
+        "home": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "0"
+        },
+        "away": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "0"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "كأس الاتحاد الإنجليزي",
+        "time": "14.05.2022",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "0"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "0"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "كأس رابطة الدوري الإنجليزي",
+        "time": "27.02.2022",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "0"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "0"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "02.01.2022",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "2"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "2"
+        }
+      }
+    ],
+    "f2fBigWins": [
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "27.08.1937",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "6"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "1"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "19.04.1935",
+        "home": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "6"
+        },
+        "away": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "0"
+        }
+      }
+    ],
+    "homeLastMatches": [
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "28.05.2023",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "1"
+        },
+        "away": {
+          "name": "نيوكاسل يونايتد",
+          "url": "9287/newcastle-united",
+          "img": "https://img.btolat.com/teamslogo/9287.png?v=971",
+          "goals": "1"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "25.05.2023",
+        "home": {
+          "name": "مانشستر يونايتد",
+          "url": "9260/manchester-united",
+          "img": "https://img.btolat.com/teamslogo/9260.png?v=491",
+          "goals": "4"
+        },
+        "away": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "1"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "21.05.2023",
+        "home": {
+          "name": "مانشستر سيتي",
+          "url": "9259/manchester-city",
+          "img": "https://img.btolat.com/teamslogo/9259.png?v=922",
+          "goals": "1"
+        },
+        "away": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "0"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "13.05.2023",
+        "home": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "2"
+        },
+        "away": {
+          "name": "نوتينجهام فورست",
+          "url": "9297/nottingham-forest",
+          "img": "https://img.btolat.com/teamslogo/9297.png?v=865",
+          "goals": "2"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "06.05.2023",
+        "home": {
+          "name": "بورنموث",
+          "url": "9053/afc-bournemouth",
+          "img": "https://img.btolat.com/teamslogo/9053.png?v=674",
+          "goals": "1"
+        },
+        "away": {
+          "name": "تشيلسي",
+          "url": "9092/chelsea",
+          "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+          "goals": "3"
+        }
+      }
+    ],
+    "awayLastMatches": [
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "28.05.2023",
+        "home": {
+          "name": "ساوثهامبتون",
+          "url": "9363/southampton",
+          "img": "https://img.btolat.com/teamslogo/9363.png?v=808",
+          "goals": "4"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "4"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "20.05.2023",
+        "home": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "1"
+        },
+        "away": {
+          "name": "أستون فيلا",
+          "url": "9008/aston-villa",
+          "img": "https://img.btolat.com/teamslogo/9008.png?v=780",
+          "goals": "1"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "15.05.2023",
+        "home": {
+          "name": "ليستر سيتي",
+          "url": "9240/leicester-city",
+          "img": "https://img.btolat.com/teamslogo/9240.png?v=924",
+          "goals": "0"
+        },
+        "away": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "3"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "06.05.2023",
+        "home": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "1"
+        },
+        "away": {
+          "name": "برينتفورد",
+          "url": "9059/brentford",
+          "img": "https://img.btolat.com/teamslogo/9059.png?v=523",
+          "goals": "0"
+        }
+      },
+      {
+        "id": "",
+        "status": "finished",
+        "league": "الدوري الإنجليزي",
+        "time": "03.05.2023",
+        "home": {
+          "name": "ليفربول",
+          "url": "9249/liverpool",
+          "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+          "goals": "1"
+        },
+        "away": {
+          "name": "فولهام",
+          "url": "9175/fulham",
+          "img": "https://img.btolat.com/teamslogo/9175.png?v=596",
+          "goals": "0"
+        }
+      }
+    ],
+    "standings": [
+      {
+        "groupName": "  ",
+        "standings": [
+          {
+            "order": 5,
+            "teamData": {
+              "name": "ليفربول",
+              "img": "https://img.btolat.com/teamslogo/9249.png?v=112",
+              "url": "9249/liverpool"
+            },
+            "matchesPlayed": 38,
+            "wins": 19,
+            "draws": 10,
+            "losses": 9,
+            "goalsFor": 75,
+            "goalsAgainst": 47,
+            "goalsDiff": 28,
+            "points": 67
+          },
+          {
+            "order": 12,
+            "teamData": {
+              "name": "تشيلسي",
+              "img": "https://img.btolat.com/teamslogo/9092.png?v=306",
+              "url": "9092/chelsea"
+            },
+            "matchesPlayed": 38,
+            "wins": 11,
+            "draws": 11,
+            "losses": 16,
+            "goalsFor": 38,
+            "goalsAgainst": 47,
+            "goalsDiff": -9,
+            "points": 44
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
