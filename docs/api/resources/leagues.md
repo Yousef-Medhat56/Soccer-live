@@ -55,3 +55,71 @@ Scraped from `https://www.btolat.com/leagues`
   }
 }
 ```
+### GET: /leagues/[league_id]/[league_slug]/standings
+Return standings of the league.
+#### Example Request
+`GET /api/leagues/1193/premier-league/standings`
+
+Scraped from `https://www.btolat.com/league/standings/1193/premier-league`
+
+#### Example Response
+```
+{
+  "data": {
+    "groups": [
+      {
+        "groupName": " ",
+        "standings": [
+          {
+            "order": 1,
+            "teamData": {
+              "name": "الأهلي",
+              "img": "https://img.btolat.com/teamslogo/8883.png?v=485",
+              "url": "8883/al-ahly"
+            },
+            "matchesPlayed": 25,
+            "wins": 20,
+            "draws": 5,
+            "losses": 0,
+            "goalsFor": 48,
+            "goalsAgainst": 7,
+            "goalsDiff": 41,
+            "points": 65
+          },
+          {
+            "order": 2,
+            "teamData": {
+              "name": "بيراميدز",
+              "img": "https://img.btolat.com/teamslogo/23165.png?v=987",
+              "url": "23165/asyouty-sport"
+            },
+            "matchesPlayed": 30,
+            "wins": 19,
+            "draws": 7,
+            "losses": 4,
+            "goalsFor": 45,
+            "goalsAgainst": 18,
+            "goalsDiff": 27,
+            "points": 64
+          },
+          {
+            "order": 3,
+            "teamData": {
+              "name": "فيوتشر اف سي",
+              "img": "https://img.btolat.com/teamslogo/34496.png?v=302",
+              "url": "34496/fc-future"
+            },
+            "matchesPlayed": 30,
+            "wins": 15,
+            "draws": 12,
+            "losses": 3,
+            "goalsFor": 32,
+            "goalsAgainst": 17,
+            "goalsDiff": 15,
+            "points": 57
+          },
+          ....
+    }
+  ]
+}
+```
