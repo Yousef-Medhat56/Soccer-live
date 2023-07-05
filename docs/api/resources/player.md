@@ -126,3 +126,39 @@ Scraped from `btolat.com/player/statics/39358/e-hazard`
   }
 }
 ```
+### GET: /player/[player_id]/[player_slug]/transfers
+Return data about the player transfers.
+
+#### Example Request 
+`GET /api/player/39358/e-hazard/transfers`
+
+Scraped from `btolat.com/player/transfers/39358/e-hazard`
+#### Example Response
+```
+{
+  "data": {
+    "playerTransfers": {
+      "playerName": "إدين هازارد ",
+      "playerImg": "https://img.btolat.com/playerslogo/39358.png?v=61",
+      "trasnfers": [
+        {
+          "from": {
+            "name": "تشيلسي",
+            "url": "9092/تشيلسي",
+            "img": "https://img.btolat.com/teamslogo/9092.png?v=306 "
+          },
+          "to": {
+            "name": "ريال مدريد",
+            "url": "16110/ريال-مدريد",
+            "img": "https://img.btolat.com/teamslogo/16110.png?v=829 "
+          },
+          "date": "01-07-2019",
+          "price": "€ 100M",
+          "type": "بيع"
+        },
+        ...
+      ]
+    }
+  }
+}
+```
