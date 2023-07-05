@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import { Match, TeamInMatch } from "@/types/matches/match";
+import { removePartfromStr } from "@/utils/string-manipulator";
 
 // get array of old matches details
 export const getOldMatchesArr = (
@@ -23,7 +24,7 @@ export const getOldMatchesArr = (
     const homeTeamDiv = $(this).find(".teamA");
     const homeTeam: TeamInMatch = {
       name: homeTeamDiv.find("a").text(),
-      url: homeTeamDiv.find("a").attr("href")!,
+      url: removePartfromStr(homeTeamDiv.find("a").attr("href")!, "/team/"),
       img: homeTeamDiv.find("img").attr("src")!,
       goals: homeTeamDiv.find("span").text(),
     };
@@ -32,7 +33,7 @@ export const getOldMatchesArr = (
     const awayTeamDiv = $(this).find(".teamB");
     const awayTeam: TeamInMatch = {
       name: awayTeamDiv.find("a").text(),
-      url: awayTeamDiv.find("a").attr("href")!,
+      url: removePartfromStr(awayTeamDiv.find("a").attr("href")!, "/team/"),
       img: awayTeamDiv.find("img").attr("src")!,
       goals: awayTeamDiv.find("span").text(),
     };
