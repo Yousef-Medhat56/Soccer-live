@@ -19,7 +19,7 @@ export default function MatchesDayPicker({
   const [showDayPicker, setShowDayPicker] = useState(false);
 
   const toggleShowDayPicker = () => setShowDayPicker(!showDayPicker);
-  
+
   const handleSelectDay = (selectedDate: Date) => {
     router.push(`/matches?date=${format(selectedDate, "y-MM-dd")}`);
     setSelectedDay(selectedDate);

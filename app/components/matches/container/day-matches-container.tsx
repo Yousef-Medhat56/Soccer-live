@@ -36,7 +36,6 @@ export default function DayMatchesConatainer() {
     refreshInterval: 60,
   });
 
-
   const [selectedDay, setSelectedDay] = useState<Date>(
     matchDate ? new Date(matchDate) : new Date()
   );
@@ -79,45 +78,51 @@ export default function DayMatchesConatainer() {
 
       {/* SECTION HEADER END  */}
       {matches ? (
-        matches.data.allMatches.length?(matches.data.allMatches.map((league: LeagueMatches) => {
-          if (
-            leagueFilter == "all" ||
-            leagueFilter == league.leagueId ||
-            !isLeagueIdValid(matches.data.leagues, leagueFilter!)
-          )
-            return (
-              <div key={league.leagueId} className="py-4">
-                {/* HEADING START  */}
-                <div className="flex justify-between items-center mb-3">
-                  <Link
-                    href={`/leagues/${league.leagueId}/${league.leagueSlug}`}
-                  >
-                    <h2 className="py-2 font-bold text:lg md:text-xl border-b-[3px] border-primary">
-                      {league.leagueName}
-                    </h2>
-                  </Link>
-                  <span className="flex text-primary font-bold text-sm md:text-base p-2 pl-1 rounded-md hover:bg-gray-100">
+        matches.data.allMatches.length ? (
+          matches.data.allMatches.map((league: LeagueMatches) => {
+            if (
+              leagueFilter == "all" ||
+              leagueFilter == league.leagueId ||
+              !isLeagueIdValid(matches.data.leagues, leagueFilter!)
+            )
+              return (
+                <div key={league.leagueId} className="py-4">
+                  {/* HEADING START  */}
+                  <div className="flex justify-between items-center mb-3">
                     <Link
                       href={`/leagues/${league.leagueId}/${league.leagueSlug}`}
                     >
-                      المزيد
+                      <h2 className="py-2 font-bold text:lg md:text-xl border-b-[3px] border-primary">
+                        {league.leagueName}
+                      </h2>
                     </Link>
-                    <ChevronLeftIcon className="text-primary w-6" />
-                  </span>
-                </div>
-                {/* HEADING END  */}
+                    <span className="flex text-primary font-bold text-sm md:text-base p-2 pl-1 rounded-md hover:bg-gray-100">
+                      <Link
+                        href={`/leagues/${league.leagueId}/${league.leagueSlug}`}
+                      >
+                        المزيد
+                      </Link>
+                      <ChevronLeftIcon className="text-primary w-6" />
+                    </span>
+                  </div>
+                  {/* HEADING END  */}
 
-                {/* MATCHES CARDS START  */}
-                <div>
-                  {league.matches.map((match: Match) => (
-                    <MatchCard key={match.id} match={match} />
-                  ))}
+                  {/* MATCHES CARDS START  */}
+                  <div>
+                    {league.matches.map((match: Match) => (
+                      <MatchCard key={match.id} match={match} />
+                    ))}
+                  </div>
+                  {/* MATCHES CARDS END  */}
                 </div>
-                {/* MATCHES CARDS END  */}
-              </div>
-            );
-        })
-      ):(<h2 className="text-center text-lg text-label pt-6">لا يوجد مباريات</h2>)) : (
+              );
+          })
+        ) : (
+          <h2 className="text-center text-lg text-label pt-6">
+            لا يوجد مباريات
+          </h2>
+        )
+      ) : (
         <MatchesCardsLoading />
       )}
     </>

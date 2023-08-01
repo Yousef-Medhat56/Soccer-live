@@ -17,9 +17,9 @@ module.exports = {
         ignored: "#959595",
         background: "#EFF1F3",
       },
-      screens:{
-        "3xl":"1700px"
-      }
+      screens: {
+        "3xl": "1700px",
+      },
     },
   },
   plugins: [],

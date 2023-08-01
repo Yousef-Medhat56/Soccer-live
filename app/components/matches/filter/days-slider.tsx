@@ -33,7 +33,7 @@ export default function DaysSlider({
           const isSelectedDay = date
             ? day.getDate() == new Date(date).getDate()
             : false;
-          
+
           return (
             <Link href={`/matches?date=${format(day, "y-MM-dd")}`} key={index}>
               <span
