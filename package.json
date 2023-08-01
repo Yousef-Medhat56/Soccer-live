@@ -16,6 +16,7 @@
     "@types/react-dom": "18.0.11",
     "bufferutil": "^4.0.7",
     "cheerio": "^1.0.0-rc.12",
+    "date-fns": "^2.30.0",
     "encoding": "^0.1.13",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -24,7 +25,9 @@
     "prettier": "^2.8.8",
     "puppeteer": "^19.4.1",
     "react": "18.2.0",
+    "react-day-picker": "^8.8.0",
     "react-dom": "18.2.0",
+    "swr": "^2.2.0",
     "typescript": "5.0.4",
     "utf-8-validate": "^5.0.10"
   },
