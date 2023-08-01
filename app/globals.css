@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rdp-caption {
+  display: flex;
+  justify-content: space-between;
+}
+.rdp-nav {
+  direction: ltr;
+  transform: rotate(180deg);
+}
+
+.rdp button {
+  color: #959595;
+}
+
+.rdp button:hover {
+  background-color: #c9e8c7 !important;
+  color: #fff;
+}
+.rdp-day_selected,
+.rdp .rdp-day_selected:hover {
+  background-color: #7abf74 !important;
+  color: #fff !important;
+}
+.rdp-caption_label {
+  color: #555555;
+}
