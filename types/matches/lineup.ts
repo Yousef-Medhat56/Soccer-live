@@ -1,18 +1,18 @@
 export type PlayerInLineup = {
   name: string;
-  shirtNumber: number;
-  positionNumber?: number;
+  number: number;
+  // positionNumber?: number;
 };
 
 export type TeamLineup = {
   formation: string;
   substitutes?: PlayerInLineup[];
   mainPlayers: {
-    GK: PlayerInLineup; //goalkeeper
-    D: PlayerInLineup[]; //defenders
-    M?: PlayerInLineup[]; //midfielders
-    DM?: PlayerInLineup[]; //defensive midfielders
-    AM?: PlayerInLineup[]; //attacking midfielders
-    F: PlayerInLineup[]; //forward
+    gk: PlayerInLineup; //goalkeeper
+    df: PlayerInLineup[]; //defenders
+    cm?: PlayerInLineup[]; //midfielders
+    cdm?: PlayerInLineup[]; //defensive midfielders
+    cam?: PlayerInLineup[]; //attacking midfielders
+    fw: PlayerInLineup[]; //forward
   };
 };
