@@ -27,3 +27,60 @@
 .rdp-caption_label {
   color: #555555;
 }
+
+.rotation-wrapper-outer {
+  display: table;
+}
+.rotation-wrapper-inner {
+  padding: 50% 0;
+  height: 0;
+}
+.pitch {
+  display: block !important;
+  transform-origin: top left;
+  transform: rotate(90deg) translate(0, -137%);
+  margin-top: -50% !important;
+}
+.pitch .name {
+  font-size: 12px !important;
+}
+.pitch .line:empty {
+  display: none !important;
+}
+.pitch .player-view {
+  rotate: 270deg;
+}
+
+.pitch .player {
+  padding: 16px !important;
+}
+
+@media (max-width: 590px) {
+  .rotation-wrapper-inner {
+    padding: 0 45vw;
+    width: 0;
+    height: 610px;
+  }
+
+  .pitch {
+    margin-top: 0 !important;
+    transform: rotate(90deg) translate(0, -50%);
+  }
+}
+
+@media (max-width: 420px) {
+  .rotation-wrapper-inner {
+    height: 520px;
+  }
+  .pitch {
+    width: 515px !important;
+    height: 300px !important;
+  }
+  .pitch .player {
+    padding: 16px !important;
+    font-size: 12px !important;
+  }
+  .pitch .name {
+    font-size: 10px !important;
+  }
+}
