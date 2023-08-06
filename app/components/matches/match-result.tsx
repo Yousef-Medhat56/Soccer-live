@@ -112,7 +112,7 @@ const ClubInMatchResult = ({
               !isHome && "flex-row-reverse"
             }`}
           >
-            <h3>{scorer.name} </h3>
+            <h3 className="text-sm md:text-base">{scorer.name} </h3>
             <span className={`text-primary ${isHome ? "pr-1" : "pl-1"}`}>
               {scorer.time}{" "}
             </span>

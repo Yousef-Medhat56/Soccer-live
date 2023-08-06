@@ -29,7 +29,7 @@ export default function MatchCard({ match }: { match: Match }) {
             </h3>
 
             <span
-              className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-4`}
+              className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-4 text-center`}
             >
               {matchStatusText}
             </span>
