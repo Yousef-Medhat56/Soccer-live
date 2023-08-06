@@ -1,4 +1,5 @@
 import { MatchEvent } from "@/types/matches/event";
+import { removePartfromStr } from "@/utils/string-manipulator";
 import * as cheerio from "cheerio";
 
 export async function GET(
@@ -31,9 +32,17 @@ export async function GET(
         matchEvents.push({
           atHomeTeam: $(this).hasClass("rightTL"),
           eventTime: $(this).find("time").text().split(" ")[0]!,
-          eventImg: $(this).find("img").attr("src"),
+          eventType: removePartfromStr(
+            $(this).find("img").attr("src")!,
+            "https://static.btolat.com/images/"
+          ).split(".")[0],
           playerName: $(this).find("b").text(),
           substituteName: $(this).find("span").text() || undefined,
+        });
+      } else {
+        matchEvents.push({
+          eventType: $(this).text(),
+          isTitle: true,
         });
       }
     });
