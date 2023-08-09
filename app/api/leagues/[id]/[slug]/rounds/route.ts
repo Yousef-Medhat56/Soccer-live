@@ -1,5 +1,4 @@
-import { getMatches } from "@/app/api/matches/utils";
-import { MatchesInDay, OptionTag } from "@/types/league/matches";
+import { OptionTag } from "@/types/league/matches";
 import * as cheerio from "cheerio";
 
 export async function GET(
@@ -45,34 +44,21 @@ export async function GET(
 
     //loop through rounds
     $("option").each(function () {
+      const roundName = $(this).text().trim();
       const roundQueryStr = $(this).attr("value")!.split("=")[1];
 
       //check if the round is selected
       if ($(this).attr("selected")) selectedRound = roundQueryStr;
-    });
 
-    //array of matches in the round
-    const roundMatches: MatchesInDay[] = [];
-
-    //loop through days
-    $("div.matchDate").each(function (index) {
-      const date = $(this).find("h4").text();
-
-      //get all matches of the day
-      const matchesArr = getMatches($, $(this).parent().find("ul").eq(index));
-
-      roundMatches.push({
-        date,
-        matches: matchesArr,
-      });
+      roundsArr.push({ name: roundName, queryStr: roundQueryStr });
     });
 
     return new Response(
       JSON.stringify({
         data: {
+          rounds: roundsArr,
           selectedRound: {
             roundQueryStr: selectedRound,
-            days: roundMatches,
           },
         },
       })
@@ -82,7 +68,7 @@ export async function GET(
       JSON.stringify({
         data: {
           league: `${id}/${slug}`,
-          message: `League matches are not available.`,
+          message: `League rounds are not available.`,
         },
       }),
       { status: 404 }
