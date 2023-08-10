@@ -4,8 +4,16 @@ import MatchCard, { MatchCardLoading } from "../../matches/match-card";
 import useSWR from "swr";
 
 //swr fetcher
-const fetcher = (url: URL, init?: RequestInit) =>
-  fetch(url).then((r) => r.json());
+const fetcher = async (url: URL, init?: RequestInit) => {
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    const error = new Error();
+    throw error;
+  }
+
+  return res.json();
+};
 
 export default function LeagueMatchesComp({
   id,
@@ -21,8 +29,8 @@ export default function LeagueMatchesComp({
   }/api/leagues/${id}/${slug}/matches${roundId ? "?round=" + roundId : ""}`;
 
   //Fetch matches data
-  const { data } = useSWR(URL, fetcher, {
-    refreshInterval: 60,
+  const { data, error } = useSWR(URL, fetcher, {
+    refreshInterval: 60 * 10, //refresh every 10 minutes
   });
 
   const selectedRound: { roundQueryStr: string; days: MatchesInDay[] } =
@@ -32,7 +40,7 @@ export default function LeagueMatchesComp({
     <div className="mt-[-12px]">
       {data && selectedRound ? (
         selectedRound.days.map((day, index) => (
-          <div key={index} >
+          <div key={index}>
             <h1 className="text-center text-label font-bold pt-8 text-sm md:text-base">
               {day.date}
             </h1>
@@ -44,7 +52,15 @@ export default function LeagueMatchesComp({
           </div>
         ))
       ) : (
-        <LeagueMatchesLoading />
+        <>
+          {error ? (
+            <h2 className="text-label pt-4 md:pt-6 text-center">
+              جدول المباريات غير متاح
+            </h2>
+          ) : (
+            <LeagueMatchesLoading />
+          )}
+        </>
       )}
     </div>
   );
