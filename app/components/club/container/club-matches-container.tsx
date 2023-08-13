@@ -1,9 +1,8 @@
 import { OptionTag } from "@/types/league/matches";
 import { Match } from "@/types/matches/match";
-import Chip, { ChipLoading } from "../../chip/chip";
+import { ChipLoading } from "../../chip/chip";
 import MatchesFilterWrapper from "../matches/matches-filter-wrapper";
 import MatchCard, { MatchCardLoading } from "../../matches/match-card";
-import { SelectRoundLoading } from "../../leagues/filter/select-round-wrapper";
 
 export default async function ClubMatchesContainer({
   id,
