@@ -12,7 +12,7 @@ export async function GET(
   const { id } = params;
   const url = `https://www.btolat.com/matches/statistics/${id}`;
   //fetch data
-  let response = await fetch(url);
+  let response = await fetch(url,{ next: { revalidate: 60 } });
 
   const data = await response.text();
 

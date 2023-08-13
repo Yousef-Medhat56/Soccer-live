@@ -3,7 +3,6 @@ import MatchDetailsContainer, {
 } from "@/app/components/matches/container/match-details";
 import { Suspense } from "react";
 
-export const revalidate = 60;
 export default function MatchDetailsPage({
   params,
 }: {

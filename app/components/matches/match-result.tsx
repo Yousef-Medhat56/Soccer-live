@@ -7,7 +7,8 @@ import Link from "next/link";
 
 export default async function MatchResultCard({ id }: { id: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/results`
+    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/results`,
+    { next: { revalidate: 60 } }
   );
   const { data }: { data: MatchResults } = await response.json();
 
@@ -21,11 +22,11 @@ export default async function MatchResultCard({ id }: { id: string }) {
           <ClubInMatchResult club={data.home} isHome />
           {/* Match STATUS AND SCORE START  */}
           <div className="flex flex-col items-center mt-8 md:mt-6">
-            <div className="flex items-center  mx-4 lg:mx-12">
+            <div className="flex items-center  mx-3 lg:mx-12">
               <span className="font-bold text-xl md:text-2xl  text-primary">
                 {data.home.goals}
               </span>
-              <span className="font-bold text-center text-base md:text-xl text-label mx-4 md:mx-6">
+              <span className="font-bold text-center text-base md:text-xl text-label mx-3 md:mx-6">
                 {data.status}
               </span>
               <span className="font-bold text-xl md:text-2xl text-primary">
@@ -95,7 +96,7 @@ const ClubInMatchResult = ({
           alt={club.name}
           width={75}
           height={75}
-          className="w-[60px] md:w-[75px] h-[60px] md:h-[75px] mb-2 md:mb-0"
+          className="w-[60px] md:w-[75px] mb-2 md:mb-0"
         />
         <h2
           className={`text-base md:text-xl font-bold text-center ${

@@ -9,7 +9,8 @@ export default async function LeagueTopScorersComp({
   slug: string;
 }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/top-scorers`
+    `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/top-scorers`,
+    { next: { revalidate: 60 } }
   );
 
   const {

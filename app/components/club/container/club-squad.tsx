@@ -11,7 +11,8 @@ export default async function ClubSquad({
   slug: string;
 }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/squad`
+    `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/squad`,
+    { next: { revalidate: 60 } }
   );
 
   const {

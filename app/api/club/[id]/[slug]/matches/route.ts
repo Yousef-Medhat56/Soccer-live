@@ -27,7 +27,7 @@ export async function GET(
   leagueId && url.searchParams.set("leagueid", leagueId);
 
   //fetch data
-  let response = await fetch(url);
+  let response = await fetch(url,{ next: { revalidate: 60 } });
 
   let data = await response.text();
 

@@ -9,7 +9,8 @@ interface MatchDetails extends MatchHistoryDetails {
 }
 export default async function MatchDetailsContainer({ id }: { id: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/details`
+    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/details`,
+    { next: { revalidate: 60 * 5 } }
   );
   const { data }: { data: MatchDetails } = await response.json();
 

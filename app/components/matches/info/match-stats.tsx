@@ -1,9 +1,9 @@
 import { MatchStats } from "@/types/matches/stats";
 
-export const revalidate = 60;
 export default async function MatchStatsComp({ id }: { id: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/stats`
+    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/stats`,
+    { next: { revalidate: 60 } }
   );
   const { data }: { data: MatchStats } = await response.json();
 

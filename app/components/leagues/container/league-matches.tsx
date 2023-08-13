@@ -30,7 +30,7 @@ export default function LeagueMatchesComp({
 
   //Fetch matches data
   const { data, error } = useSWR(URL, fetcher, {
-    refreshInterval: 60 * 10, //refresh every 10 minutes
+    refreshInterval: 60,
   });
 
   const selectedRound: { roundQueryStr: string; days: MatchesInDay[] } =

@@ -2,12 +2,10 @@ import { TeamLineup } from "@/types/matches/lineup";
 import SubstitutesList, { SubstitutesListLoading } from "./lineup/substitutes";
 import Pitch from "./lineup/pitch";
 
-export const revalidate = 60 * 5;
-
 export default async function MatchLineupComp({ id }: { id: string }) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/lineups`,
-    { cache: "no-cache" }
+    { next: { revalidate: 60 } }
   );
   const { home, away }: { home: TeamLineup; away: TeamLineup } =
     await response.json();
