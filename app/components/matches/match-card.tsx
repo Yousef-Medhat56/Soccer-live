@@ -59,14 +59,14 @@ export default function MatchCard({
           <Link href={`/matches/${match.id}/details`}>
             <div className="flex flex-col items-center justify-between">
               <div className="flex">
-                <h3 className="text-2xl font-bold text-primary mr-5">
+                <h3 className="text-2xl font-bold text-primary mr-3 md:mr-5">
                   {match.home.goals ? match.home.goals : "-"}
                 </h3>
 
                 <div className="flex flex-col mx-4 items-center justify-between">
                   {match.status && (
                     <span
-                      className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-4 text-center`}
+                      className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-2 md:mx-4 text-center`}
                     >
                       {matchStatusText}
                     </span>
@@ -83,7 +83,7 @@ export default function MatchCard({
                     </span>
                   )}
                 </div>
-                <h3 className="text-2xl font-bold text-primary ml-5">
+                <h3 className="text-2xl font-bold text-primary ml-3 md:ml-5">
                   {match.away.goals ? match.away.goals : "-"}
                 </h3>
               </div>
@@ -171,7 +171,7 @@ export const ClubInMatch = ({
           <h3 className="font-bold text-xs md:text-base px-2 text-center mt-2 md:mt-0">
             {club.name}
           </h3>
-          <Image src={club.img!} alt={club.name} width={60} height={60} />
+          <Image src={club.img!} alt={club.name} width={60} height={60} className="w-[45px] md:w-[60px]"/>
         </div>
       </Link>
     </div>
