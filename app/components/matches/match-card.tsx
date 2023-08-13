@@ -58,7 +58,7 @@ export default function MatchCard({
         {match.id ? (
           <Link href={`/matches/${match.id}/details`}>
             <div className="flex flex-col items-center justify-between">
-              <div className="flex">
+              <div className="flex items-center">
                 <h3 className="text-2xl font-bold text-primary mr-3 md:mr-5">
                   {match.home.goals ? match.home.goals : "-"}
                 </h3>
@@ -66,7 +66,7 @@ export default function MatchCard({
                 <div className="flex flex-col mx-4 items-center justify-between">
                   {match.status && (
                     <span
-                      className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-2 md:mx-4 text-center`}
+                      className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-2 md:mx-4 text-center whitespace-nowrap`}
                     >
                       {matchStatusText}
                     </span>
@@ -95,15 +95,15 @@ export default function MatchCard({
         ) : (
           <div>
             <div className="flex flex-col items-center justify-between">
-              <div className="flex">
-                <h3 className="text-2xl font-bold text-primary mr-5">
+              <div className="flex items-center">
+                <h3 className="text-2xl font-bold text-primary mr-3 md:mr-5">
                   {match.home.goals ? match.home.goals : "-"}
                 </h3>
 
                 <div className="flex flex-col mx-4 items-center justify-between">
                   {match.status && (
                     <span
-                      className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-4 text-center`}
+                      className={`${matchStatusColor} text-white font-light text-sm px-4 py-1 mx-2 md:mx-4 text-center whitespace-nowrap`}
                     >
                       {matchStatusText}
                     </span>
@@ -120,7 +120,7 @@ export default function MatchCard({
                     </span>
                   )}
                 </div>
-                <h3 className="text-2xl font-bold text-primary ml-5">
+                <h3 className="text-2xl font-bold text-primary ml-3 md:ml-5">
                   {match.away.goals ? match.away.goals : "-"}
                 </h3>
               </div>
