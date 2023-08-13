@@ -12,7 +12,7 @@ export async function GET(
   }
 ) {
   const { id } = params;
-  const url = `https://www.btolat.com/matches/statistics/${id}`;
+  const url = `https://www.btolat.com/matches/events/${id}`;
   //fetch data
   let response = await fetch(url, { cache: "no-cache" });
 

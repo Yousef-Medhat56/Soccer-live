@@ -33,6 +33,11 @@ export async function GET(
     const f2fHistoryDiv = $(".historyChart div");
     const f2fHistoryArr: number[] = [];
 
+    //Home name
+    const homeName = $(".teamA .teamNameX").text().trim();
+    //Away name
+    const awayName = $(".teamB .teamNameX").text().trim();
+
     let totalF2F = 0; //total times the 2 teams faced each other
     f2fHistoryDiv.each(function () {
       const num = +$(this).find("p span").text();
@@ -101,6 +106,8 @@ export async function GET(
     return new Response(
       JSON.stringify({
         data: {
+          homeName,
+          awayName,
           ...matchHistoryDetails,
         },
       })

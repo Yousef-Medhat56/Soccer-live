@@ -1,6 +1,4 @@
-import { ClubDetails } from "@/types/club/club";
 import { PlayerInSquad } from "@/types/club/player";
-import { LeagueLink } from "@/types/league/league";
 import { removePartfromStr } from "@/utils/string-manipulator";
 import * as cheerio from "cheerio";
 
@@ -26,6 +24,8 @@ export async function GET(
   if ($(".leagueTable tbody tr").length) {
     //players array
     const squad: PlayerInSquad[] = [];
+    const isNationalTeam =
+      $(".leagueTable thead th").eq(2).text().trim() == "الفريق";
     $(".leagueTable tbody tr").each(function () {
       //player object
       const player: PlayerInSquad = {
@@ -45,8 +45,12 @@ export async function GET(
           }
           // player position
           else if (index == 1) player.position = $(this).text().trim();
-          // player nationality
-          else if (index == 2) player.nationality = $(this).text().trim();
+          // player nationality or club
+          else if (index == 2) {
+            isNationalTeam
+              ? (player.club = $(this).text().trim())
+              : (player.nationality = $(this).text().trim());
+          }
           // player birth date
           else if (index == 3) {
             //date regex pattern
@@ -59,7 +63,7 @@ export async function GET(
       squad.push(player);
     });
 
-    return new Response(JSON.stringify({ data: { squad } }));
+    return new Response(JSON.stringify({ data: { squad, isNationalTeam } }));
   } else {
     return new Response(
       JSON.stringify({

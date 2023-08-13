@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function MatchPage({ params }: { params: { id: string } }) {
-  redirect(`/matches/${params.id}/stats`);
+  redirect(`/matches/${params.id}/details`);
 }
