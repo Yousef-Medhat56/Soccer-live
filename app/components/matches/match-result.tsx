@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 export default async function MatchResultCard({ id }: { id: string }) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/results`,
-    { next: { revalidate: 60 } }
+    { cache: "no-cache" }
   );
 
   if (response.status == 404) notFound();

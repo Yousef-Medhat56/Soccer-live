@@ -1,7 +1,7 @@
 import { eachDayOfInterval, format } from "date-fns";
 import { ar } from "date-fns/locale";
 import Link from "next/link";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useRef } from "react";
 
 export default function DaysSlider({
   date,
@@ -24,8 +24,15 @@ export default function DaysSlider({
     setSelectedDay(day);
   };
 
+  const daysSlider = useRef<HTMLDivElement>(null);
+
+  if (daysSlider.current) daysSlider.current.scrollLeft = -270;
+
   return (
-    <div className="flex items-center justify-between lg:justify-center mt-4 max-w-full  overflow-x-scroll lg:overflow-x-auto">
+    <div
+      ref={daysSlider}
+      className="flex items-center justify-between lg:justify-center mt-4 max-w-full  overflow-x-scroll lg:overflow-x-auto"
+    >
       <div className="flex items-center justify-between xl:justify-center border-b-2 border-stroke">
         {buildDatesArr.map((day, index) => {
           const isTodayDate =

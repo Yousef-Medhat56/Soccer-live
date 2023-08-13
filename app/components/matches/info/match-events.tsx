@@ -4,6 +4,7 @@ import GoalIcon from "@/public/icons/goal.svg";
 import YellowCardIcon from "@/public/icons/yellow-card.svg";
 import RedCardIcon from "@/public/icons/red-card.svg";
 import SecondYellowIcon from "@/public/icons/second-yellow.svg";
+import VarIcon from "@/public/icons/var.svg";
 import MissedPenIcon from "@/public/icons/missed-penalty.svg";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import styles from "./styles.module.css";
@@ -82,6 +83,8 @@ const EventElm = ({ event }: { event: MatchEvent }) => {
         return SecondYellowIcon;
       case "pen miss":
         return MissedPenIcon;
+      case "var":
+        return VarIcon
       default:
         return SecondYellowIcon;
     }
