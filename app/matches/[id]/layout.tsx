@@ -23,7 +23,7 @@ export default function MatchPageLayout({
         </main>
       </Container>
 
-      <Container className="mb-24">
+      <Container className="mb-12">
         <main>
           <MatchInfoConatiner id={params.id}>{children}</MatchInfoConatiner>
         </main>

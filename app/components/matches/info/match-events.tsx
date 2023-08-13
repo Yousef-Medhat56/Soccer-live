@@ -94,7 +94,7 @@ const EventElm = ({ event }: { event: MatchEvent }) => {
         alt={event.eventType}
         width={45}
         height={45}
-        className="px-1 md:px-2 w-[35px] md:w-[45px] h-[35px] md:h-[45px]"
+        className={`${event.atHomeTeam?"pr-1 md:pr-2":"pl-1 md:pl-2"}w-[35px] md:w-[45px] h-[35px] md:h-[45px]`}
       />
       <span className="text-label text-sm md:text-base">
         {event.playerName}

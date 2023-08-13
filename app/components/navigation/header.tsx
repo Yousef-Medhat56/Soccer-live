@@ -1,7 +1,9 @@
 "use client";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "@/public/logo.svg";
 
 // Nav link component
 const NavLink = ({ text, url }: { text: string; url: string }) => {
@@ -19,8 +21,8 @@ const NavLink = ({ text, url }: { text: string; url: string }) => {
 
 const navLinksArr = [
   { text: "المباريات", url: "/matches" },
-  { text: "الدوري الإنجليزي", url: "/" },
-  { text: "الدوري المصري", url: "/" },
+  { text: "الدوري المصري", url: "/leagues/1193/premier-league/standings" },
+  { text: "الدوري الإنجليزي", url: "/leagues/1204/premier-league/standings" },
   { text: "كل الدوريات", url: "/leagues" },
 ];
 
@@ -28,11 +30,11 @@ export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
   const handleClick = () => setIsOpened(!isOpened);
   return (
-    <header className="relative z-[100] bg-white border-b border-stroke">
+    <header className="relative z-[100] bg-white border-b border-stroke shadow-sm">
       <nav className="py-5  bg-white  md:flex md:items-center md:justify-between mx-4 md:mx-20 lg:mx-32 3xl:max-w-[1400px] 3xl:m-auto">
         <div className="flex justify-between items-center ">
-          <Link href="/" className="text-2xl">
-            LOGO
+          <Link href="/matches" className="text-2xl">
+            <Image src={Logo} alt="Soccer info logo" width={110} height={70} />
           </Link>
 
           <button

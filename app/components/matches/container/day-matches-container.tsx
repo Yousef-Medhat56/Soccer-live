@@ -90,7 +90,7 @@ export default function DayMatchesConatainer() {
                   {/* HEADING START  */}
                   <div className="flex justify-between items-center mb-3">
                     <Link
-                      href={`/leagues/${league.leagueId}/${league.leagueSlug}`}
+                      href={`/leagues/${league.leagueId}/${league.leagueSlug}/standings`}
                     >
                       <h2 className="py-2 font-bold text:lg md:text-xl border-b-[3px] border-primary">
                         {league.leagueName}
@@ -98,7 +98,7 @@ export default function DayMatchesConatainer() {
                     </Link>
                     <span className="flex text-primary font-bold text-sm md:text-base p-2 pl-1 rounded-md hover:bg-gray-100">
                       <Link
-                        href={`/leagues/${league.leagueId}/${league.leagueSlug}`}
+                        href={`/leagues/${league.leagueId}/${league.leagueSlug}/standings`}
                       >
                         المزيد
                       </Link>
@@ -110,7 +110,7 @@ export default function DayMatchesConatainer() {
                   {/* MATCHES CARDS START  */}
                   <div>
                     {league.matches.map((match: Match) => (
-                      <MatchCard key={match.id} match={match} />
+                      <MatchCard key={match.id} match={match} showTime/>
                     ))}
                   </div>
                   {/* MATCHES CARDS END  */}

@@ -9,7 +9,7 @@ export default async function MatchStatsComp({ id }: { id: string }) {
 
   //@ts-ignore
   const noStats = data.message ? true : false;
-  
+
   const stats = [
     { name: "الاستحواذ", key: "possession" },
     { name: "التسديدات", key: "shots" },
@@ -37,7 +37,9 @@ export default async function MatchStatsComp({ id }: { id: string }) {
 
           return (
             <div key={stat.key} className="py-2 text-center">
-              <h3 className="font-bold text-label">{stat.name}</h3>
+              <h3 className="font-bold text-label text-sm md:text-base">
+                {stat.name}
+              </h3>
               <div className="flex items-center justify-center my-1">
                 <span className="text-primary font-bold">
                   {homeStat}

@@ -46,7 +46,7 @@ export default function LeagueMatchesComp({
             </h1>
             <div>
               {day.matches.map((match, index) => (
-                <MatchCard key={index} match={match} />
+                <MatchCard key={index} match={match} showTime/>
               ))}
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function LeagueMatchesComp({
       ) : (
         <>
           {error ? (
-            <h2 className="text-label pt-4 md:pt-6 text-center">
+            <h2 className="text-label pt-1 md:pt-3 text-center">
               جدول المباريات غير متاح
             </h2>
           ) : (
@@ -68,7 +68,7 @@ export default function LeagueMatchesComp({
 
 export const LeagueMatchesLoading = () => {
   return (
-    <div>
+    <div className="animate-pulse">
       {[...Array(4)].map((key) => (
         <div key={key}>
           <div className="animate-pulse flex flex-col items-center">

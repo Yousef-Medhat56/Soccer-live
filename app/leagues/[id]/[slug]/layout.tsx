@@ -13,7 +13,7 @@ export default function LeaguePageLayout({
   children: ReactNode;
 }) {
   return (
-    <Container className="my-10 md:mt-14 md:mb-10">
+    <Container className="mt-10 md:mt-14 mb-12">
       <main>
         <Suspense fallback={<LeagueHeaderLoading />}>
           {/* @ts-expect-error Server Component */}
