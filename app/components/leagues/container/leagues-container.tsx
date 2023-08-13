@@ -1,17 +1,35 @@
+"use client";
 import { LeagueLink } from "@/types/league/league";
 import LeaguesList, { LeagueListLoading } from "../leagues-list";
+import useSWR from "swr";
 
-export default async function LeaguesContainer() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/leagues`);
-  const { data } = await response.json();
-  const popularLeagues: LeagueLink[] = data.leagues.popular;
-  const allLeagues: LeagueLink[] = data.leagues.all;
+//swr fetcher
+const fetcher = (url: URL, init?: RequestInit) =>
+  fetch(url).then((r) => r.json());
+
+export default function LeaguesContainer() {
+  const URL = process.env.NEXT_PUBLIC_URL + `/api/leagues`;
+  const { data } = useSWR(URL, fetcher);
+
+  let popularLeagues: LeagueLink[] = [];
+  let allLeagues: LeagueLink[] = [];
+
+  if (data) {
+    popularLeagues = data.data.leagues.popular;
+    allLeagues = data.data.leagues.all;
+  }
   return (
     <div>
-      <LeaguesList title="أشهر الدوريات" leaguesArr={popularLeagues} />
-      <div className="mt-3">
-        <LeaguesList title="كل الدوريات" leaguesArr={allLeagues} />
-      </div>
+      {data ? (
+        <>
+          <LeaguesList title="أشهر الدوريات" leaguesArr={popularLeagues} />
+          <div className="mt-3">
+            <LeaguesList title="كل الدوريات" leaguesArr={allLeagues} />
+          </div>
+        </>
+      ) : (
+        <LeaguesContainerLoading />
+      )}
     </div>
   );
 }

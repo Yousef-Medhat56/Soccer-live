@@ -30,7 +30,7 @@ export default function Header() {
   const [isOpened, setIsOpened] = useState(false);
   const handleClick = () => setIsOpened(!isOpened);
   return (
-    <header className="relative z-[100] bg-white border-b border-stroke shadow-sm">
+    <header className="relative z-[100] bg-white border-b border-stroke">
       <nav className="py-5  bg-white  md:flex md:items-center md:justify-between mx-4 md:mx-20 lg:mx-32 3xl:max-w-[1400px] 3xl:m-auto">
         <div className="flex justify-between items-center ">
           <Link href="/matches" className="text-2xl">
