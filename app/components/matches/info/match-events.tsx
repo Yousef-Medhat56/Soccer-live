@@ -8,11 +8,10 @@ import MissedPenIcon from "@/public/icons/missed-penalty.svg";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import styles from "./styles.module.css";
 
-export const revalidate = 60 * 5;
-
 export default async function MatchEventsComp({ id }: { id: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/events`
+    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/events`,
+    { next: { revalidate: 60 } }
   );
   const { data: matchEvents }: { data: MatchEvent[] } = await response.json();
 

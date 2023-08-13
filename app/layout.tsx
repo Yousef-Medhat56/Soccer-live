@@ -26,7 +26,6 @@ export default function RootLayout({
           </span>
           <span className="text-label text-sm md:text-base">
             Made with ❤️ by <span className="text-primary">Yousef Medhat</span>
-            😉
           </span>
         </footer>
       </body>

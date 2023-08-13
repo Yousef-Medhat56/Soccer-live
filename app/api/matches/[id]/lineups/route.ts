@@ -11,7 +11,7 @@ export async function GET(
   const { id } = params;
   const url = `https://www.btolat.com/matches/LinupGet/${id}`;
   //fetch data
-  const response = await fetch(url);
+  const response = await fetch(url, { next: { revalidate: 60 } });
   const data = await response.json();
 
   //check if the response is successful

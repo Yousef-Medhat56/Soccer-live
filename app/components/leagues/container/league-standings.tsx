@@ -9,7 +9,8 @@ export default async function LeagueStandingsComp({
   slug: string;
 }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/standings`
+    `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/standings`,
+    { next: { revalidate: 60 } }
   );
 
   const {

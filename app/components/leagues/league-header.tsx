@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 export default async function LeagueHeader({
   id,
   slug,
@@ -8,7 +10,7 @@ export default async function LeagueHeader({
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/`
   );
-
+  if (response.status == 404) notFound();
   const { data } = await response.json();
   return (
     <h1 className="text-lg md:text-xl font-bold mt-2 mb-6 md:mb-4 pb-2 border-b-[3px] border-primary w-fit">

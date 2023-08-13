@@ -2,16 +2,25 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Logo from "@/public/logo.svg";
 
 // Nav link component
-const NavLink = ({ text, url }: { text: string; url: string }) => {
+const NavLink = ({
+  text,
+  url,
+  setIsOpened,
+}: {
+  text: string;
+  url: string;
+  setIsOpened: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <li className="mx-4 my-5 md:my-0">
       <Link
         href={url}
         className="text-base text-label font-bold hover:text-primary duration-300"
+        onClick={() => setIsOpened(false)}
       >
         {text}
       </Link>
@@ -47,12 +56,17 @@ export default function Header() {
 
         <ul
           className={`md:flex md:items-center z-[-1] md:z-[1] md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-2 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-300 ${
-            isOpened && "top-[71px] opacity-100"
+            isOpened && "top-[64px] opacity-100"
           }`}
         >
           {/* loop through nav links */}
           {navLinksArr.map((link) => (
-            <NavLink key={link.text} text={link.text} url={link.url} />
+            <NavLink
+              key={link.text}
+              text={link.text}
+              url={link.url}
+              setIsOpened={setIsOpened}
+            />
           ))}
         </ul>
       </nav>

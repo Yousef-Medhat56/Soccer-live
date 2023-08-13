@@ -70,7 +70,7 @@ export const createTeamFormation = (
 
 export const getSubsitutes = async (matchId: string, isHomeTeam: boolean) => {
   const url = `https://www.btolat.com/matches/lineup/${matchId}`;
-  const response = await fetch(url);
+  const response = await fetch(url, { next: { revalidate: 60 } });
   const data = await response.text();
 
   //load data to cheerio

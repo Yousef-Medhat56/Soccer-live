@@ -10,7 +10,8 @@ export default async function SelectRoundWrapper({
   slug: string;
 }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/rounds`
+    `${process.env.NEXT_PUBLIC_URL}/api/leagues/${id}/${slug}/rounds`,
+    { next: { revalidate: 60 } }
   );
 
   const {

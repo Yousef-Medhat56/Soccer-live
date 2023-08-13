@@ -10,7 +10,8 @@ export default async function ClubInfoComp({
   slug: string;
 }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/info`
+    `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/info`,
+    { next: { revalidate: 60 } }
   );
 
   const {

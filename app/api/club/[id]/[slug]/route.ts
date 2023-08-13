@@ -22,7 +22,7 @@ export async function GET(
   const $ = cheerio.load(data);
 
   //check if the response is successful
-  if (response.status === 200) {
+  if ($(".details h2").length) {
     //club name
     const clubName = $(".details h2").text();
 

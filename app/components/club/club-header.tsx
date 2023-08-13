@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default async function ClubHeader({
   id,
@@ -10,7 +11,7 @@ export default async function ClubHeader({
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/`
   );
-
+  if (response.status == 404) notFound();
   const { data } = await response.json();
   return (
     <div className="flex items-center text-lg md:text-xl font-bold mt-2 mb-6 md:mb-4 pb-2 border-b-[3px] border-primary w-fit">
