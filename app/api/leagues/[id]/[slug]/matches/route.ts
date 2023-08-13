@@ -45,13 +45,10 @@ export async function GET(
 
     //loop through rounds
     $("option").each(function () {
-      const roundName = $(this).text().trim();
       const roundQueryStr = $(this).attr("value")!.split("=")[1];
 
       //check if the round is selected
       if ($(this).attr("selected")) selectedRound = roundQueryStr;
-
-      roundsArr.push({ name: roundName, queryStr: roundQueryStr });
     });
 
     //array of matches in the round
@@ -73,10 +70,9 @@ export async function GET(
     return new Response(
       JSON.stringify({
         data: {
-          rounds: roundsArr,
           selectedRound: {
             roundQueryStr: selectedRound,
-            matches: roundMatches,
+            days: roundMatches,
           },
         },
       })

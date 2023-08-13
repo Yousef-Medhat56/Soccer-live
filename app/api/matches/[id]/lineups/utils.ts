@@ -3,9 +3,9 @@ import * as cheerio from "cheerio";
 
 //players positions by number of formation lines
 const positionsByFormLines = {
-  3: ["D", "M", "F"], //ex: 4-3-3
-  4: ["D", "DM", "AM", "F"], //ex: 4-2-3-1
-  5: ["D", "DM", "M", "AM", "F"], //ex: 4-1-2-1-2
+  3: ["df", "cm", "fw"], //ex: 4-3-3
+  4: ["df", "cdm", "cam", "fw"], //ex: 4-2-3-1
+  5: ["df", "cdm", "cm", "cam", "fw"], //ex: 4-1-2-1-2
 };
 
 type Player = {
@@ -35,19 +35,19 @@ export const createTeamFormation = (
   //goalkeeper data
   const goalkeeper: PlayerInLineup = {
     name: orderedPlayersList[0].Name,
-    shirtNumber: orderedPlayersList[0].Number,
-    positionNumber: orderedPlayersList[0].formation_pos,
+    number: orderedPlayersList[0].Number,
+    // positionNumber: orderedPlayersList[0].formation_pos,
   };
 
   const team: TeamLineup = {
     formation: teamForm,
     mainPlayers: {
-      GK: goalkeeper,
-      D: [],
-      DM: [],
-      M: [],
-      AM: [],
-      F: [],
+      gk: goalkeeper,
+      df: [],
+      cdm: [],
+      cm: [],
+      cam: [],
+      fw: [],
     },
   };
 
@@ -56,8 +56,8 @@ export const createTeamFormation = (
     for (let i = 0; i < x; i++) {
       const newPlayer = {
         name: orderedPlayersList[playerIndex].Name,
-        shirtNumber: orderedPlayersList[playerIndex].Number,
-        positionNumber: orderedPlayersList[playerIndex].formation_pos,
+        number: orderedPlayersList[playerIndex].Number,
+        // positionNumber: orderedPlayersList[playerIndex].formation_pos,
       };
       //@ts-ignore
       team.mainPlayers[teamFormLines[index]].push(newPlayer);
@@ -84,7 +84,7 @@ export const getSubsitutes = async (matchId: string, isHomeTeam: boolean) => {
   substitutesHTML.each(function () {
     const newPlayer: PlayerInLineup = {
       name: $(this).find(".playerName").text(),
-      shirtNumber: +$(this).find(".playerNumber").text(),
+      number: +$(this).find(".playerNumber").text(),
     };
     substitutesArr.push(newPlayer);
   });

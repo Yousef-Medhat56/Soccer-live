@@ -67,7 +67,7 @@ export async function GET(
 
     //get league names
     const matchesArr = getMatches($, $(".matchDate ul"));
-    $(".matchDate li:even").each(function (index) {
+    $(".matchDate li h4").each(function (index) {
       const leagueName = $(this).text().trim();
       matchesArr[index].league = leagueName;
     });

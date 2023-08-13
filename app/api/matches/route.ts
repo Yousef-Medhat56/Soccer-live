@@ -10,11 +10,14 @@ export async function GET(req: Request) {
     : "https://www.btolat.com/matches/PartialMatchesPage";
 
   //fetch data
-  let response = await fetch(url);
+  let response = await fetch(url, { next: { revalidate: 60 } });
 
   //if the response is not successful, refetch the main url
   if (response.status !== 200) {
-    response = await fetch("https://www.btolat.com/matches/PartialMatchesPage");
+    response = await fetch(
+      "https://www.btolat.com/matches/PartialMatchesPage",
+      { next: { revalidate: 60 } }
+    );
   }
 
   const data = await response.text();
@@ -23,11 +26,21 @@ export async function GET(req: Request) {
   const $ = cheerio.load(data);
 
   const allMatches: LeagueMatches[] = [];
+  const leagues: { id: string; name: string }[] = [];
 
   //loop through leagues
   $(".matchtableX").each(function () {
     const leagueId = $(this).attr("data-leg-name")!;
     const leagueName = $(this).find(".col h2").text()!;
+    leagues.push({ id: leagueId, name: leagueName });
+
+    const leagueSlugArr = $(this)
+      .find(".newsLinks a")
+      .eq(0)
+      .attr("href")!
+      .split("/");
+    const leagueSlug = leagueSlugArr[leagueSlugArr.length - 1];
+
     const leagueImg = $(this).find(".col-2 img").attr("src");
 
     //get all matches in the league
@@ -35,11 +48,12 @@ export async function GET(req: Request) {
 
     allMatches.push({
       leagueId,
+      leagueSlug,
       leagueName,
       leagueImg,
       matches: matchesInLeague,
     });
   });
 
-  return new Response(JSON.stringify({ data: { allMatches } }));
+  return new Response(JSON.stringify({ data: { leagues, allMatches } }));
 }

@@ -3,6 +3,7 @@ export type PlayerInSquad = {
   img?: String;
   url?: String;
   nationality?: String;
+  club?: String;
   position?: String;
   birthDate?: Date;
 };

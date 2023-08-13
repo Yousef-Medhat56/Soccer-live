@@ -1,7 +1,8 @@
 export type MatchEvent = {
-  atHomeTeam: boolean; //determine event happened for the home or away team
-  eventTime: string;
-  eventImg?: string;
+  eventType: string;
+  isTitle?: boolean;
+  atHomeTeam?: boolean; //determine event happened for the home or away team
+  eventTime?: string;
   playerName?: string;
   substituteName?: string;
 };

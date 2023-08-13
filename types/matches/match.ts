@@ -16,6 +16,7 @@ export type Match = {
 
 export type LeagueMatches = {
   leagueId: string;
+  leagueSlug?: string;
   leagueName: string;
   leagueImg?: string;
   matches: Match[];
