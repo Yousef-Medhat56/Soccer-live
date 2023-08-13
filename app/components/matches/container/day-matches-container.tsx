@@ -110,7 +110,7 @@ export default function DayMatchesConatainer() {
                   {/* MATCHES CARDS START  */}
                   <div>
                     {league.matches.map((match: Match) => (
-                      <MatchCard key={match.id} match={match} showTime/>
+                      <MatchCard key={match.id} match={match} showTime />
                     ))}
                   </div>
                   {/* MATCHES CARDS END  */}

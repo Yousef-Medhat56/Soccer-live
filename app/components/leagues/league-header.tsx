@@ -17,8 +17,8 @@ export default async function LeagueHeader({
   );
 }
 
-export const LeagueHeaderLoading = ()=>{
-    return(
-        <div className="bg-gray-200 h-7 w-36 mt-2 mb-6 md:mb-4 animate-pulse"></div>
-    )
-}
+export const LeagueHeaderLoading = () => {
+  return (
+    <div className="bg-gray-200 h-7 w-36 mt-2 mb-6 md:mb-4 animate-pulse"></div>
+  );
+};

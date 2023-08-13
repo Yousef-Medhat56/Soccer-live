@@ -5,61 +5,59 @@
   margin: 0 auto;
 }
 
-
-.timelineBar{
-    position: absolute;
+.timelineBar {
+  position: absolute;
   width: 2px;
   height: 100%;
   top: 0;
   bottom: 0;
   left: 50%;
   margin-left: -1px;
-  background-color: #CDCDCD;
- 
+  background-color: #cdcdcd;
 }
 
-.right{
-right: 0% !important;
+.right {
+  right: 0% !important;
 }
 
-.left{
-left: 0% !important;
+.left {
+  left: 0% !important;
 }
 
-@media(min-width: 768px) {
-  .right{
+@media (min-width: 768px) {
+  .right {
     right: 5% !important;
-    }
-    
-    .left{
+  }
+
+  .left {
     left: 5% !important;
-    }
+  }
 }
 
-@media(min-width: 935px) {
-  .right{
+@media (min-width: 935px) {
+  .right {
     right: 15% !important;
-    }
-    
-    .left{
+  }
+
+  .left {
     left: 15% !important;
-    }
+  }
 }
-@media(min-width: 1200px) {
-  .right{
+@media (min-width: 1200px) {
+  .right {
     right: 20% !important;
-    }
-    
-    .left{
+  }
+
+  .left {
     left: 20% !important;
-    }
+  }
 }
-@media(min-width: 1400px) {
-  .right{
+@media (min-width: 1400px) {
+  .right {
     right: 25% !important;
-    }
-    
-    .left{
+  }
+
+  .left {
     left: 25% !important;
-    }
+  }
 }

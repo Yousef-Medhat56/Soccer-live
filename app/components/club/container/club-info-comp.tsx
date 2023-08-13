@@ -24,15 +24,15 @@ export default async function ClubInfoComp({
     "تاريخ التأسيس",
     "الملعب",
   ];
-  let valuesNum = 0
+  let valuesNum = 0;
   return (
     <div className="flex flex-col items-center justify-center mt-4 w-fit">
       <div>
         {clubDetailsKeys.map((key, index) => {
           // @ts-ignore
           const value = clubDetails[key];
-          if(value)valuesNum++;
-        
+          if (value) valuesNum++;
+
           return (
             <div key={key}>
               {value && (
@@ -50,7 +50,7 @@ export default async function ClubInfoComp({
         })}
       </div>
       <div className="w-full px-6 md:px-8">
-        {clubDetails.participatingLeagues.length ?(
+        {clubDetails.participatingLeagues.length ? (
           <div>
             <h2 className="pt-6 font-bold text-sm md:text-base">
               البطولات التي يشارك بها
@@ -67,11 +67,12 @@ export default async function ClubInfoComp({
                 </Link>
               ))}
             </div>
-            
           </div>
-        ):""}
+        ) : (
+          ""
+        )}
       </div>
-      {valuesNum==0&&<h2 className="text-label">لا يوجد معلومات متوفرة</h2>}
+      {valuesNum == 0 && <h2 className="text-label">لا يوجد معلومات متوفرة</h2>}
     </div>
   );
 }

@@ -8,7 +8,7 @@ import MissedPenIcon from "@/public/icons/missed-penalty.svg";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import styles from "./styles.module.css";
 
-export const revalidate = 60*5;
+export const revalidate = 60 * 5;
 
 export default async function MatchEventsComp({ id }: { id: string }) {
   const response = await fetch(
@@ -94,7 +94,9 @@ const EventElm = ({ event }: { event: MatchEvent }) => {
         alt={event.eventType}
         width={45}
         height={45}
-        className={`${event.atHomeTeam?"pr-1 md:pr-2":"pl-1 md:pl-2"}w-[35px] md:w-[45px] h-[35px] md:h-[45px]`}
+        className={`${
+          event.atHomeTeam ? "pr-1 md:pr-2" : "pl-1 md:pl-2"
+        }w-[35px] md:w-[45px] h-[35px] md:h-[45px]`}
       />
       <span className="text-label text-sm md:text-base">
         {event.playerName}

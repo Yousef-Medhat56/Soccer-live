@@ -12,7 +12,9 @@ export default function LeagueCard({ league }: { league: LeagueLink }) {
           height={70}
           width={70}
         />
-        <h3 className="font-bold text-label pt-3 text-center text-sm md:text-base">{league.name}</h3>
+        <h3 className="font-bold text-label pt-3 text-center text-sm md:text-base">
+          {league.name}
+        </h3>
       </div>
     </Link>
   );

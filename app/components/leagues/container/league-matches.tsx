@@ -46,7 +46,7 @@ export default function LeagueMatchesComp({
             </h1>
             <div>
               {day.matches.map((match, index) => (
-                <MatchCard key={index} match={match} showTime/>
+                <MatchCard key={index} match={match} showTime />
               ))}
             </div>
           </div>

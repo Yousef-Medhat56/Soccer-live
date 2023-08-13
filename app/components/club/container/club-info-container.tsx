@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 export default function ClubInfoContainer({
   id,
   slug,
@@ -25,7 +24,6 @@ export default function ClubInfoContainer({
 
   return (
     <div className="w-full">
-      
       <div
         className={`text-label text-sm md:text-base font-bold flex  justify-around md:justify-evenly border-stroke border-b-2 `}
       >

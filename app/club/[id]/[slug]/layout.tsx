@@ -1,4 +1,6 @@
-import ClubHeader, { ClubHeaderLoading } from "@/app/components/club/club-header";
+import ClubHeader, {
+  ClubHeaderLoading,
+} from "@/app/components/club/club-header";
 import ClubInfoContainer from "@/app/components/club/container/club-info-container";
 import Container from "@/app/components/container/container";
 

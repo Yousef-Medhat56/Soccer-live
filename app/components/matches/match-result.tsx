@@ -7,8 +7,7 @@ import Link from "next/link";
 
 export default async function MatchResultCard({ id }: { id: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/results`,
-    
+    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/results`
   );
   const { data }: { data: MatchResults } = await response.json();
 
@@ -62,7 +61,9 @@ export default async function MatchResultCard({ id }: { id: string }) {
                   height={24}
                 />
               </div>
-              <span className="max-w-[80%] md:max-w-max">{data.info.stadium}</span>
+              <span className="max-w-[80%] md:max-w-max">
+                {data.info.stadium}
+              </span>
             </div>
           )}
         </div>

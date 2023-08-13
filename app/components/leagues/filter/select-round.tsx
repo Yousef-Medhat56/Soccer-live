@@ -7,7 +7,7 @@ export default function SelectRound({
   selectedRound,
 }: {
   roundsArr: OptionTag[];
-  selectedRound: {roundQueryStr: string};
+  selectedRound: { roundQueryStr: string };
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -21,13 +21,12 @@ export default function SelectRound({
     router.push(`${pathname}?${params.toString()}`);
   };
 
- 
   return (
     <>
       {roundsArr.length ? (
         <select
           onChange={(e) => handleChange(e.target.value)}
-          defaultValue={selectedRoundId||selectedRound.roundQueryStr}
+          defaultValue={selectedRoundId || selectedRound.roundQueryStr}
           className={`${
             roundsArr && "max-w-[60%] md:max-w-full"
           } text-sm md:text-base px-1 md:px-2 md:py-1 outline outline-2 outline-stroke border-l-4 md:border-l-8 border-transparent rounded text-label`}
