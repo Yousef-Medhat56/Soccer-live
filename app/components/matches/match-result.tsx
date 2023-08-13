@@ -26,7 +26,7 @@ export default async function MatchResultCard({ id }: { id: string }) {
               <span className="font-bold text-xl md:text-2xl  text-primary">
                 {data.home.goals}
               </span>
-              <span className="font-bold text-center text-lg md:text-xl text-label mx-4 md:mx-6">
+              <span className="font-bold text-center text-base md:text-xl text-label mx-4 md:mx-6">
                 {data.status}
               </span>
               <span className="font-bold text-xl md:text-2xl text-primary">
@@ -62,7 +62,7 @@ export default async function MatchResultCard({ id }: { id: string }) {
                   height={24}
                 />
               </div>
-              <span>{data.info.stadium}</span>
+              <span className="max-w-[80%] md:max-w-max">{data.info.stadium}</span>
             </div>
           )}
         </div>
@@ -97,7 +97,7 @@ const ClubInMatchResult = ({
           className="w-[60px] md:w-[75px] h-[60px] md:h-[75px] mb-2 md:mb-0"
         />
         <h2
-          className={`text-lg md:text-xl font-bold text-center ${
+          className={`text-base md:text-xl font-bold text-center ${
             isHome ? "pl-2" : "pr-2"
           }`}
         >
