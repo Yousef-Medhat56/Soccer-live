@@ -4,12 +4,15 @@ import { CalendarDaysIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { ClubInMatchLoading } from "./match-card";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default async function MatchResultCard({ id }: { id: string }) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/results`,
     { next: { revalidate: 60 } }
   );
+
+  if (response.status == 404) notFound();
   const { data }: { data: MatchResults } = await response.json();
 
   return (
