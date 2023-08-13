@@ -21,7 +21,7 @@ export default async function ClubMatchesContainer({
     ? `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/matches?previous=true`
     : `${process.env.NEXT_PUBLIC_URL}/api/club/${id}/${slug}/matches`;
 
-  const response = await fetch(URL,{ next: { revalidate: 60 } });
+  const response = await fetch(URL, { next: { revalidate: 60 } });
   const {
     data: { tournaments, selectedTournament },
   }: {

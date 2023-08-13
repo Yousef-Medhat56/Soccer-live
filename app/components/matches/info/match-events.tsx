@@ -10,7 +10,8 @@ import styles from "./styles.module.css";
 
 export default async function MatchEventsComp({ id }: { id: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/events`,{ next: { revalidate: 60 } }
+    `${process.env.NEXT_PUBLIC_URL}/api/matches/${id}/events`,
+    { next: { revalidate: 60 } }
   );
   const { data: matchEvents }: { data: MatchEvent[] } = await response.json();
 

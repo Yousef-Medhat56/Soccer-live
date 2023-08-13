@@ -171,7 +171,13 @@ export const ClubInMatch = ({
           <h3 className="font-bold text-xs md:text-base px-2 text-center mt-2 md:mt-0">
             {club.name}
           </h3>
-          <Image src={club.img!} alt={club.name} width={60} height={60} className="w-[45px] md:w-[60px]"/>
+          <Image
+            src={club.img!}
+            alt={club.name}
+            width={60}
+            height={60}
+            className="w-[45px] md:w-[60px]"
+          />
         </div>
       </Link>
     </div>

@@ -20,7 +20,7 @@ export async function GET(
     : `https://www.btolat.com/league/fixtures/${id}/${slug}`;
 
   //fetch data
-  let response = await fetch(url,{ next: { revalidate: 60 } });
+  let response = await fetch(url, { next: { revalidate: 60 } });
 
   let data = await response.text();
 
