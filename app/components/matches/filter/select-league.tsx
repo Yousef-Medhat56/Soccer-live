@@ -21,7 +21,7 @@ export default function SelectLeague({
       onChange={(e) => handleChange(e.target.value)}
       defaultValue={filter}
       className={`${
-        leagues && "max-w-[130px] md:max-w-full"
+        leagues && "max-w-[110px] md:max-w-full"
       } text-sm md:text-base px-1 md:px-2 md:py-1 outline outline-2 outline-stroke border-l-4 md:border-l-8 border-transparent rounded text-label`}
     >
       <option value="all">كل البطولات</option>
