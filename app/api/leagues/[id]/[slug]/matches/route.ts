@@ -30,7 +30,7 @@ export async function GET(
   //if the round value is invalid, refetch the page without the round query string
   if (round && !$(".matchtableX").length && $("select").length) {
     url = `https://www.btolat.com/league/fixtures/${id}/${slug}`;
-    response = await fetch(url);
+    response = await fetch(url, { next: { revalidate: 60 } });
     data = await response.text();
     $ = cheerio.load(data);
   }

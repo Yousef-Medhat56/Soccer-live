@@ -37,7 +37,7 @@ export async function GET(
   //   if the league id value is invalid, refetch the page without the league id query string
   if (leagueId && !$(".matchtableX li").length && $("select").length) {
     url.searchParams.delete("leagueid"); //remove the league id query string
-    response = await fetch(url);
+    response = await fetch(url, { next: { revalidate: 60 } });
     data = await response.text();
     $ = cheerio.load(data);
   }

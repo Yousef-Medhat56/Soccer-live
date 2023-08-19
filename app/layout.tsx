@@ -25,7 +25,14 @@ export default function RootLayout({
             2023 Soccer Info
           </span>
           <span className="text-label text-sm md:text-base">
-            Made with ❤️ by <span className="text-primary">Yousef Medhat</span>
+            Made with ❤️ by{" "}
+            <a
+              className="text-primary"
+              href="https://yousef-medhat.com"
+              target="_blank"
+            >
+              Yousef Medhat
+            </a>
           </span>
         </footer>
       </body>
