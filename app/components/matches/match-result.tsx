@@ -1,10 +1,11 @@
 import { MatchResults, TeamResults } from "@/types/matches/results";
 import PitchIcon from "../../../public/icons/pitch.svg";
 import { CalendarDaysIcon, ClockIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+
 import { ClubInMatchLoading } from "./match-card";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export default async function MatchResultCard({ id }: { id: string }) {
   const response = await fetch(
@@ -94,7 +95,7 @@ const ClubInMatchResult = ({
             : "flex-col md:flex-row"
         }`}
       >
-        <Image
+        <img
           src={club.img!}
           alt={club.name}
           width={75}

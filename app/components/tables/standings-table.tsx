@@ -1,5 +1,5 @@
 import { GroupStandings } from "@/types/league/standings";
-import Image from "next/image";
+
 import Link from "next/link";
 
 export default function StandingsTable({ group }: { group: GroupStandings }) {
@@ -47,7 +47,7 @@ export default function StandingsTable({ group }: { group: GroupStandings }) {
                   className="flex items-center"
                 >
                   <span className="text-primary inline-block w-[25px] ">{`${team.order}`}</span>
-                  <Image
+                  <img
                     src={`${team.teamData.img}`}
                     alt={`${team.teamData.name}`}
                     height={24}

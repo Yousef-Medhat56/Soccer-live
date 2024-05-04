@@ -1,5 +1,5 @@
 import { MatchEvent } from "@/types/matches/event";
-import Image from "next/image";
+
 import GoalIcon from "@/public/icons/goal.svg";
 import YellowCardIcon from "@/public/icons/yellow-card.svg";
 import RedCardIcon from "@/public/icons/red-card.svg";
@@ -91,7 +91,7 @@ const EventElm = ({ event }: { event: MatchEvent }) => {
   };
   return (
     <>
-      <Image
+      <img
         src={returnEventIcon(event.eventType)}
         alt={event.eventType}
         width={45}

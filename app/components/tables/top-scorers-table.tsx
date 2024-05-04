@@ -1,5 +1,5 @@
 import { TopScorer } from "@/types/league/top-scorer";
-import Image from "next/image";
+
 import Link from "next/link";
 
 export default function TopScorersTable({ players }: { players: TopScorer[] }) {
@@ -29,7 +29,7 @@ export default function TopScorersTable({ players }: { players: TopScorer[] }) {
                   <span className="text-primary inline-block w-[25px] ">{`${
                     index + 1
                   }`}</span>
-                  <Image
+                  <img
                     src={`https:${player.playerData.img}`}
                     alt={`${player.playerData.name}`}
                     height={36}
@@ -49,7 +49,7 @@ export default function TopScorersTable({ players }: { players: TopScorer[] }) {
                   href={`/club/${player.clubData.url}`}
                   className="flex justify-center text-sm max-w-[100px] md:max-w-[120px] py-[6px] px-2 bg-background rounded-xl"
                 >
-                  <Image
+                  <img
                     src={`https:${player.clubData.img}`}
                     alt={`${player.clubData.name}`}
                     height={24}
