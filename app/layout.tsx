@@ -28,7 +28,7 @@ export default function RootLayout({
             Made with ❤️ by{" "}
             <a
               className="text-primary"
-              href="yousefmedhat.vercel.app"
+              href="https://yousefmedhat.vercel.app"
               target="_blank"
             >
               Yousef Medhat
