@@ -1,6 +1,6 @@
 import { PlayerInSquad } from "@/types/club/player";
 import { differenceInYears } from "date-fns";
-import Image from "next/image";
+
 import Link from "next/link";
 
 export default function SquadTable({
@@ -40,7 +40,7 @@ export default function SquadTable({
                   <span className="text-primary inline-block w-[25px] ">{`${
                     index + 1
                   }`}</span>
-                  <Image
+                  <img
                     src={`${player.img}`}
                     alt={`${player.name}`}
                     height={36}

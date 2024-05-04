@@ -1,9 +1,10 @@
 "use client";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+
 import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 import Logo from "@/public/logo.svg";
+import Image from "next/image";
 
 // Nav link component
 const NavLink = ({

@@ -1,5 +1,4 @@
 import { Match, TeamInMatch } from "@/types/matches/match";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function MatchCard({
@@ -171,7 +170,7 @@ export const ClubInMatch = ({
           <h3 className="font-bold text-xs md:text-base px-2 text-center mt-2 md:mt-0">
             {club.name}
           </h3>
-          <Image
+          <img
             src={club.img!}
             alt={club.name}
             width={60}

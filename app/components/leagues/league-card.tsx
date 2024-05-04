@@ -1,12 +1,11 @@
 import { LeagueLink } from "@/types/league/league";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function LeagueCard({ league }: { league: LeagueLink }) {
   return (
     <Link href={`/leagues/${league.url}/standings`}>
       <div className="flex flex-col items-center justify-between px-3 py-4 bg-background rounded border-2 border-transparent hover:border-stroke hover:bg-white duration-300">
-        <Image
+        <img
           src={`${league.img!}`}
           alt={`${league.name!}`}
           height={70}
