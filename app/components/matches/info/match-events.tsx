@@ -92,7 +92,7 @@ const EventElm = ({ event }: { event: MatchEvent }) => {
   return (
     <>
       <img
-        src={returnEventIcon(event.eventType)}
+        src={returnEventIcon(event.eventType).src}
         alt={event.eventType}
         width={45}
         height={45}
