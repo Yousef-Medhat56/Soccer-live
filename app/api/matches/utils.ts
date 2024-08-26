@@ -29,7 +29,7 @@ export const getMatches = (
 
     //Away team
     const awayTeamElm = $(this).find(".team2");
-
+    
     //create match object
     const match: Match = {
       id: $(this).find("a.stat").attr("href")!.split("/")[3],
@@ -37,18 +37,21 @@ export const getMatches = (
       time: $(this).find(".matchDate span").text() || undefined,
       home: {
         name: homeTeamElm.find(".teamName").text(),
-        img: homeTeamElm.find("img").attr("src"),
         url: removePartfromStr(homeTeamElm.attr("href")!, "/team/"),
         goals: $(this).find(".team1G").text() || undefined,
       },
       away: {
         name: awayTeamElm.find(".teamName").text(),
-        img: awayTeamElm.find("img").attr("src"),
         url: removePartfromStr(awayTeamElm.attr("href")!, "/team/"),
         goals: $(this).find(".team2G").text() || undefined,
       },
     };
-
+    //home team image
+    match.home.img = `https://img.btolat.com/teamslogo/${match.home.url?.split("/")[0]}.png?v=839`
+    
+    //away team image
+    match.away.img = `https://img.btolat.com/teamslogo/${match.away.url?.split("/")[0]}.png?v=839`
+    
     matchesArr.push(match);
   });
   return matchesArr;
