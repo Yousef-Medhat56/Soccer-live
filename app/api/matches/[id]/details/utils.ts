@@ -25,7 +25,6 @@ export const getOldMatchesArr = (
     const homeTeam: TeamInMatch = {
       name: homeTeamDiv.find("a").text(),
       url: removePartfromStr(homeTeamDiv.find("a").attr("href")!, "/team/"),
-      img: homeTeamDiv.find("img").attr("src")!,
       goals: homeTeamDiv.find("span").text(),
     };
 
@@ -34,10 +33,15 @@ export const getOldMatchesArr = (
     const awayTeam: TeamInMatch = {
       name: awayTeamDiv.find("a").text(),
       url: removePartfromStr(awayTeamDiv.find("a").attr("href")!, "/team/"),
-      img: awayTeamDiv.find("img").attr("src")!,
       goals: awayTeamDiv.find("span").text(),
     };
 
+     //home team image
+     homeTeam.img = `https://img.btolat.com/teamslogo/${homeTeam.url?.split("/")[0]}.png?v=839`
+    
+     //away team image
+     awayTeam.img = `https://img.btolat.com/teamslogo/${awayTeam.url?.split("/")[0]}.png?v=839`
+     
     const match: Match = {
       id: "",
       status: "finished",

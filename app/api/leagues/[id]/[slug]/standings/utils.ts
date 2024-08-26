@@ -40,7 +40,7 @@ export const getStandings = (
               team["teamData"].name = $(this).find("a").text().trim(); //team name
               team["teamData"].url =
                 teamUrl && removePartfromStr(teamUrl, "/team/"); //team url
-              team["teamData"].img = $(this).find("img").attr("src")!; //team image
+              team["teamData"].img = `https://img.btolat.com/teamslogo/${team["teamData"].url?.split("/")[0]}.png?v=839`; //team image
             }
 
             //@ts-ignore

@@ -6,8 +6,8 @@ export async function GET(req: Request) {
   const date = new URL(req.url as string).searchParams.get("date");
 
   const url = date
-    ? `https://www.btolat.com/matches/PartialMatchesPage?d=${date}`
-    : "https://www.btolat.com/matches/PartialMatchesPage";
+    ? `https://www.btolat.com/matches?d=${date}`
+    : "https://www.btolat.com/matches";
 
   //fetch data
   let response = await fetch(url, { next: { revalidate: 60 } });
@@ -15,7 +15,7 @@ export async function GET(req: Request) {
   //if the response is not successful, refetch the main url
   if (response.status !== 200) {
     response = await fetch(
-      "https://www.btolat.com/matches/PartialMatchesPage",
+      "https://www.btolat.com/matches",
       { next: { revalidate: 60 } }
     );
   }

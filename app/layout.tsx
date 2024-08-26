@@ -4,6 +4,7 @@ import Header from "./components/navigation/header";
 
 const cairo = Cairo({
   subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({
